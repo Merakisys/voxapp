@@ -1,0 +1,133 @@
+.configuracion {
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 100%;
+}
+
+.configuracion .overlap-group-wrapper {
+  background-color: #ffffff;
+  width: 430px;
+  height: 932px;
+}
+
+.configuracion .overlap-group {
+  position: relative;
+  height: 923px;
+  top: 9px;
+}
+
+.configuracion .configuracin {
+  position: absolute;
+  width: 393px;
+  height: 852px;
+  top: 27px;
+  left: 18px;
+}
+
+.configuracion .subtract {
+  position: absolute;
+  width: 29px;
+  height: 29px;
+  top: 870px;
+  left: 305px;
+}
+
+.configuracion .group {
+  position: absolute;
+  width: 390px;
+  height: 31px;
+  top: 0;
+  left: 12px;
+}
+
+.configuracion .notch {
+  position: absolute;
+  width: 191px;
+  height: 30px;
+  top: 0;
+  left: 99px;
+}
+
+.configuracion .battery {
+  position: absolute;
+  width: 29px;
+  height: 11px;
+  top: 20px;
+  left: 361px;
+}
+
+.configuracion .wifi {
+  position: absolute;
+  width: 18px;
+  height: 11px;
+  top: 20px;
+  left: 337px;
+}
+
+.configuracion .mobile-signal {
+  position: absolute;
+  width: 20px;
+  height: 11px;
+  top: 20px;
+  left: 310px;
+}
+
+.configuracion .element {
+  position: absolute;
+  width: 34px;
+  height: 11px;
+  top: 19px;
+  left: 0;
+}
+
+.configuracion .item {
+  display: flex;
+  width: 71px;
+  align-items: center;
+  justify-content: space-around;
+  gap: 10px;
+  position: absolute;
+  top: 866px;
+  left: 10px;
+}
+
+.configuracion .home {
+  position: relative;
+  width: 38px;
+  height: 38px;
+}
+
+.configuracion .union {
+  position: absolute;
+  width: 29px;
+  height: 29px;
+  top: 870px;
+  left: 113px;
+}
+
+.configuracion .account-circle {
+  position: absolute;
+  width: 38px;
+  height: 38px;
+  top: 866px;
+  left: 373px;
+}
+
+.configuracion .rectangle {
+  position: absolute;
+  width: 430px;
+  height: 89px;
+  top: 834px;
+  left: 0;
+}
+.scroll-wrapper {
+  height: 100vh;
+  width: 100%;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  display: flex;
+  justify-content: center;
+}
+

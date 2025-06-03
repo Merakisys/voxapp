@@ -1,0 +1,487 @@
+.cancion-m {
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 100%;
+}
+
+.cancion-m .div {
+  background-color: #ffffff;
+  overflow: hidden;
+  width: 430px;
+  height: 932px;
+  position: relative;
+}
+
+.cancion-m .group {
+  position: absolute;
+  width: 178px;
+  height: 20px;
+  top: 65px;
+  left: 155px;
+}
+
+.cancion-m .repertorio {
+  position: absolute;
+  width: 102px;
+  height: 21px;
+  top: 7px;
+  left: 2px;
+}
+
+.cancion-m .overlap {
+  position: absolute;
+  width: 375px;
+  height: 143px;
+  top: 803px;
+  left: 24px;
+}
+
+.cancion-m .account-circle {
+  position: absolute;
+  width: 38px;
+  height: 38px;
+  top: 82px;
+  left: 335px;
+}
+
+.cancion-m .union {
+  position: absolute;
+  width: 29px;
+  height: 29px;
+  top: 86px;
+  left: 84px;
+}
+
+.cancion-m .sample {
+  position: absolute;
+  width: 375px;
+  height: 143px;
+  top: 0;
+  left: 0;
+}
+
+.cancion-m .overlap-group {
+  position: relative;
+  width: 430px;
+  height: 113px;
+  top: 16px;
+  left: -24px;
+}
+
+.cancion-m .rectangle {
+  position: absolute;
+  width: 430px;
+  height: 85px;
+  top: 28px;
+  left: 0;
+}
+
+.cancion-m .items {
+  display: flex;
+  width: 396px;
+  align-items: flex-start;
+  position: absolute;
+  top: 64px;
+  left: 13px;
+}
+
+.cancion-m .item {
+  display: flex;
+  width: 71px;
+  align-items: center;
+  justify-content: space-around;
+  gap: 10px;
+  position: relative;
+}
+
+.cancion-m .home {
+  position: relative;
+  width: 38px;
+  height: 38px;
+}
+
+.cancion-m .music {
+  position: relative;
+  width: 23px;
+  height: 22px;
+}
+
+.cancion-m .item-2 {
+  position: relative;
+  width: 71px;
+  height: 24px;
+}
+
+.cancion-m .button-plus {
+  position: absolute;
+  width: 70px;
+  height: 70px;
+  top: 0;
+  left: 176px;
+  background-image: url(https://c.animaapp.com/mbgoss9oyoMhGo/img/background.svg);
+  background-size: 100% 100%;
+}
+
+.cancion-m .bx-plus-svg {
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  top: 6px;
+  left: 6px;
+}
+
+.cancion-m .book-store {
+  position: absolute;
+  width: 29px;
+  height: 14px;
+  top: 99px;
+  left: 287px;
+}
+
+.cancion-m .subtract {
+  position: absolute;
+  width: 29px;
+  height: 29px;
+  top: 70px;
+  left: 289px;
+}
+
+.cancion-m .overlap-2 {
+  position: absolute;
+  width: 326px;
+  height: 625px;
+  top: 171px;
+  left: 25px;
+}
+
+.cancion-m .el-pueblo-de-dios {
+  position: absolute;
+  top: 25px;
+  left: 0;
+  font-family: "Poppins", Helvetica;
+  font-weight: 700;
+  color: #1a3c5e;
+  font-size: 16px;
+  letter-spacing: 0;
+  line-height: 50px;
+}
+
+.cancion-m .text-wrapper {
+  position: absolute;
+  top: 0;
+  left: 106px;
+  font-family: "Poppins", Helvetica;
+  font-weight: 700;
+  color: #3d6fa2;
+  font-size: 15px;
+  letter-spacing: 0;
+  line-height: 50px;
+  white-space: nowrap;
+}
+
+.cancion-m .text-wrapper-2 {
+  top: 53px;
+  left: 190px;
+  position: absolute;
+  font-family: "Poppins", Helvetica;
+  font-weight: 700;
+  color: #3d6fa2;
+  font-size: 15px;
+  letter-spacing: 0;
+  line-height: 50px;
+  white-space: nowrap;
+}
+
+.cancion-m .text-wrapper-3 {
+  top: 406px;
+  left: 118px;
+  position: absolute;
+  font-family: "Poppins", Helvetica;
+  font-weight: 700;
+  color: #3d6fa2;
+  font-size: 15px;
+  letter-spacing: 0;
+  line-height: 50px;
+  white-space: nowrap;
+}
+
+.cancion-m .text-wrapper-4 {
+  top: 556px;
+  left: 81px;
+  position: absolute;
+  font-family: "Poppins", Helvetica;
+  font-weight: 700;
+  color: #3d6fa2;
+  font-size: 15px;
+  letter-spacing: 0;
+  line-height: 50px;
+  white-space: nowrap;
+}
+
+.cancion-m .text-wrapper-5 {
+  top: 308px;
+  left: 58px;
+  position: absolute;
+  font-family: "Poppins", Helvetica;
+  font-weight: 700;
+  color: #3d6fa2;
+  font-size: 15px;
+  letter-spacing: 0;
+  line-height: 50px;
+  white-space: nowrap;
+}
+
+.cancion-m .text-wrapper-6 {
+  position: absolute;
+  top: 253px;
+  left: 21px;
+  font-family: "Poppins", Helvetica;
+  font-weight: 700;
+  color: #3d6fa2;
+  font-size: 15px;
+  letter-spacing: 0;
+  line-height: 50px;
+  white-space: nowrap;
+}
+
+.cancion-m .text-wrapper-7 {
+  position: absolute;
+  top: 500px;
+  left: 31px;
+  font-family: "Poppins", Helvetica;
+  font-weight: 700;
+  color: #3d6fa2;
+  font-size: 15px;
+  letter-spacing: 0;
+  line-height: 50px;
+  white-space: nowrap;
+}
+
+.cancion-m .text-wrapper-8 {
+  position: absolute;
+  top: 156px;
+  left: 190px;
+  font-family: "Poppins", Helvetica;
+  font-weight: 700;
+  color: #3d6fa2;
+  font-size: 15px;
+  letter-spacing: 0;
+  line-height: 50px;
+  white-space: nowrap;
+}
+
+.cancion-m .text-wrapper-9 {
+  top: 106px;
+  left: 40px;
+  position: absolute;
+  font-family: "Poppins", Helvetica;
+  font-weight: 700;
+  color: #3d6fa2;
+  font-size: 15px;
+  letter-spacing: 0;
+  line-height: 50px;
+  white-space: nowrap;
+}
+
+.cancion-m .text-wrapper-10 {
+  position: absolute;
+  top: 2px;
+  left: 258px;
+  font-family: "Poppins", Helvetica;
+  font-weight: 700;
+  color: #3d6fa2;
+  font-size: 15px;
+  letter-spacing: 0;
+  line-height: 50px;
+  white-space: nowrap;
+}
+
+.cancion-m .text-wrapper-11 {
+  position: absolute;
+  top: 106px;
+  left: 161px;
+  font-family: "Poppins", Helvetica;
+  font-weight: 700;
+  color: #3d6fa2;
+  font-size: 15px;
+  letter-spacing: 0;
+  line-height: 50px;
+  white-space: nowrap;
+}
+
+.cancion-m .text-wrapper-12 {
+  position: absolute;
+  top: 53px;
+  left: 40px;
+  font-family: "Poppins", Helvetica;
+  font-weight: 700;
+  color: #3d6fa2;
+  font-size: 15px;
+  letter-spacing: 0;
+  line-height: 50px;
+  white-space: nowrap;
+}
+
+.cancion-m .text-wrapper-13 {
+  top: 156px;
+  left: 62px;
+  position: absolute;
+  font-family: "Poppins", Helvetica;
+  font-weight: 700;
+  color: #3d6fa2;
+  font-size: 15px;
+  letter-spacing: 0;
+  line-height: 50px;
+  white-space: nowrap;
+}
+
+.cancion-m .text-wrapper-14 {
+  top: 253px;
+  left: 169px;
+  position: absolute;
+  font-family: "Poppins", Helvetica;
+  font-weight: 700;
+  color: #3d6fa2;
+  font-size: 15px;
+  letter-spacing: 0;
+  line-height: 50px;
+  white-space: nowrap;
+}
+
+.cancion-m .text-wrapper-15 {
+  top: 500px;
+  left: 186px;
+  position: absolute;
+  font-family: "Poppins", Helvetica;
+  font-weight: 700;
+  color: #3d6fa2;
+  font-size: 15px;
+  letter-spacing: 0;
+  line-height: 50px;
+  white-space: nowrap;
+}
+
+.cancion-m .text-wrapper-16 {
+  top: 356px;
+  left: 99px;
+  position: absolute;
+  font-family: "Poppins", Helvetica;
+  font-weight: 700;
+  color: #3d6fa2;
+  font-size: 15px;
+  letter-spacing: 0;
+  line-height: 50px;
+  white-space: nowrap;
+}
+
+.cancion-m .group-2 {
+  position: fixed;
+  width: 390px;
+  height: 31px;
+  top: 0;
+  left: 14px;
+}
+
+.cancion-m .notch {
+  position: absolute;
+  width: 191px;
+  height: 30px;
+  top: 0;
+  left: 99px;
+}
+
+.cancion-m .battery {
+  position: absolute;
+  width: 29px;
+  height: 11px;
+  top: 20px;
+  left: 361px;
+}
+
+.cancion-m .wifi {
+  position: absolute;
+  width: 18px;
+  height: 11px;
+  top: 20px;
+  left: 337px;
+}
+
+.cancion-m .mobile-signal {
+  position: absolute;
+  width: 20px;
+  height: 11px;
+  top: 20px;
+  left: 310px;
+}
+
+.cancion-m .element {
+  position: absolute;
+  width: 34px;
+  height: 11px;
+  top: 19px;
+  left: 0;
+}
+
+.cancion-m .frame {
+  display: flex;
+  width: 358px;
+  align-items: center;
+  justify-content: space-between;
+  position: fixed;
+  top: 95px;
+  left: 36px;
+}
+
+.cancion-m .frame-2 {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  position: relative;
+  flex: 0 0 auto;
+}
+
+.cancion-m .vector {
+  position: relative;
+  width: 20px;
+  height: 28px;
+}
+
+.cancion-m .text-wrapper-17 {
+  position: relative;
+  width: fit-content;
+  margin-top: -1.00px;
+  font-family: "Poppins", Helvetica;
+  font-weight: 700;
+  color: #1a3c5e;
+  font-size: 18px;
+  letter-spacing: 0;
+  line-height: 50px;
+  white-space: nowrap;
+}
+
+.cancion-m .frame-3 {
+  display: inline-flex;
+  align-items: center;
+  position: relative;
+  flex: 0 0 auto;
+}
+
+.cancion-m .text-wrapper-18 {
+  position: relative;
+  width: fit-content;
+  font-family: "Poppins", Helvetica;
+  font-weight: 700;
+  color: #1a3c5e;
+  font-size: 18px;
+  letter-spacing: 0;
+  line-height: 50px;
+  white-space: nowrap;
+}
+
+.cancion-m .keyboard-arrow-right {
+  position: relative;
+  width: 56px;
+  height: 56px;
+}

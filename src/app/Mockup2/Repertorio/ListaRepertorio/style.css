@@ -1,0 +1,512 @@
+.lista-repertorio-m {
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 100%;
+}
+
+.lista-repertorio-m .div {
+  background-color: #ffffff;
+  overflow: hidden;
+  width: 430px;
+  height: 932px;
+  position: relative;
+}
+
+.lista-repertorio-m .group {
+  position: absolute;
+  width: 333px;
+  height: 30px;
+  top: 64px;
+  left: 9px;
+}
+
+.lista-repertorio-m .repertorio {
+  position: absolute;
+  width: 102px;
+  height: 21px;
+  top: 9px;
+  left: 156px;
+}
+
+.lista-repertorio-m .ic-baseline-less {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  top: 0;
+  left: 0;
+}
+
+.lista-repertorio-m .overlap {
+  position: absolute;
+  width: 375px;
+  height: 143px;
+  top: 806px;
+  left: 27px;
+}
+
+.lista-repertorio-m .sample {
+  position: absolute;
+  width: 375px;
+  height: 143px;
+  top: 0;
+  left: 0;
+}
+
+.lista-repertorio-m .overlap-group {
+  position: relative;
+  width: 430px;
+  height: 110px;
+  top: 16px;
+  left: -27px;
+}
+
+.lista-repertorio-m .rectangle {
+  position: absolute;
+  width: 430px;
+  height: 82px;
+  top: 28px;
+  left: 0;
+}
+
+.lista-repertorio-m .items {
+  display: flex;
+  width: 396px;
+  align-items: flex-start;
+  position: absolute;
+  top: 64px;
+  left: 16px;
+}
+
+.lista-repertorio-m .item {
+  display: flex;
+  width: 71px;
+  align-items: center;
+  justify-content: space-around;
+  gap: 10px;
+  position: relative;
+}
+
+.lista-repertorio-m .home {
+  position: relative;
+  width: 38px;
+  height: 38px;
+}
+
+.lista-repertorio-m .music {
+  position: relative;
+  width: 23px;
+  height: 22px;
+}
+
+.lista-repertorio-m .item-2 {
+  position: relative;
+  width: 71px;
+  height: 24px;
+}
+
+.lista-repertorio-m .button-plus {
+  position: absolute;
+  width: 70px;
+  height: 70px;
+  top: 0;
+  left: 179px;
+  background-image: url(https://c.animaapp.com/mbgo2g0oCPNews/img/background.svg);
+  background-size: 100% 100%;
+}
+
+.lista-repertorio-m .bx-plus-svg {
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  top: 6px;
+  left: 6px;
+}
+
+.lista-repertorio-m .book-store {
+  position: absolute;
+  width: 29px;
+  height: 11px;
+  top: 99px;
+  left: 290px;
+}
+
+.lista-repertorio-m .subtract {
+  position: absolute;
+  width: 29px;
+  height: 29px;
+  top: 70px;
+  left: 292px;
+}
+
+.lista-repertorio-m .account-circle {
+  position: absolute;
+  width: 38px;
+  height: 38px;
+  top: 82px;
+  left: 335px;
+}
+
+.lista-repertorio-m .union {
+  position: absolute;
+  width: 29px;
+  height: 29px;
+  top: 86px;
+  left: 84px;
+}
+
+.lista-repertorio-m .cart-card {
+  position: absolute;
+  width: 375px;
+  height: 144px;
+  top: 140px;
+  left: 29px;
+  border-radius: 20px;
+  box-shadow: var(--img-draopshadow);
+}
+
+.lista-repertorio-m .overlap-2 {
+  position: relative;
+  width: 211px;
+  height: 133px;
+  top: 8px;
+  left: 4px;
+}
+
+.lista-repertorio-m .cart {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 38px;
+  position: absolute;
+  top: 11px;
+  left: 15px;
+}
+
+.lista-repertorio-m .cart-layout {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+  position: relative;
+  flex: 0 0 auto;
+}
+
+.lista-repertorio-m .image-placeholder {
+  width: 106px;
+  height: 106px;
+  background-color: #4a90e2;
+  opacity: 0.5;
+  position: relative;
+  border-radius: 15px;
+}
+
+.lista-repertorio-m .cart-text {
+  display: flex;
+  flex-direction: column;
+  width: 72px;
+  align-items: flex-start;
+  gap: 10px;
+  position: relative;
+}
+
+.lista-repertorio-m .text-wrapper {
+  position: relative;
+  width: fit-content;
+  margin-top: -1.00px;
+  font-family: "Poppins", Helvetica;
+  font-weight: 600;
+  color: #1a3c5e;
+  font-size: 16px;
+  letter-spacing: 0;
+  line-height: 18px;
+  white-space: nowrap;
+}
+
+.lista-repertorio-m .text-wrapper-2 {
+  position: relative;
+  width: fit-content;
+  margin-right: -33.00px;
+  font-family: "Poppins", Helvetica;
+  font-weight: 600;
+  color: #86939c;
+  font-size: 14px;
+  letter-spacing: 0;
+  line-height: 15px;
+  white-space: nowrap;
+}
+
+.lista-repertorio-m .lam-rem-sol-do-fa {
+  position: relative;
+  width: fit-content;
+  margin-right: -111.00px;
+  font-family: "Poppins", Helvetica;
+  font-weight: 600;
+  color: #1a3c5e;
+  font-size: 14px;
+  letter-spacing: 0;
+  line-height: 18px;
+  white-space: nowrap;
+}
+
+.lista-repertorio-m .entrada {
+  position: absolute;
+  width: 133px;
+  height: 133px;
+  top: 0;
+  left: 0;
+  object-fit: cover;
+}
+
+.lista-repertorio-m .overlap-wrapper {
+  top: 309px;
+  left: 29px;
+  position: absolute;
+  width: 375px;
+  height: 144px;
+  border-radius: 20px;
+  box-shadow: var(--img-draopshadow);
+}
+
+.lista-repertorio-m .overlap-3 {
+  position: relative;
+  width: 211px;
+  height: 121px;
+  top: 11px;
+  left: 4px;
+}
+
+.lista-repertorio-m .cart-layout-wrapper {
+  position: absolute;
+  top: 8px;
+  left: 15px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 38px;
+}
+
+.lista-repertorio-m .image-placeholder-2 {
+  position: relative;
+  width: 106px;
+  height: 106px;
+  background-color: var(--secondary);
+  border-radius: 15px;
+  opacity: 0.5;
+}
+
+.lista-repertorio-m .p {
+  position: relative;
+  width: fit-content;
+  margin-right: -134.00px;
+  font-family: "Poppins", Helvetica;
+  font-weight: 600;
+  color: #1a3c5e;
+  font-size: 14px;
+  letter-spacing: 0;
+  line-height: 18px;
+  white-space: nowrap;
+}
+
+.lista-repertorio-m .perdon-wrapper {
+  position: absolute;
+  width: 125px;
+  height: 121px;
+  top: 0;
+  left: 0;
+}
+
+.lista-repertorio-m .perdon {
+  position: absolute;
+  width: 130px;
+  height: 126px;
+  top: 0;
+  left: 0;
+  object-fit: cover;
+}
+
+.lista-repertorio-m .overlap-group-wrapper {
+  top: 478px;
+  left: 29px;
+  position: absolute;
+  width: 375px;
+  height: 144px;
+  border-radius: 20px;
+  box-shadow: var(--img-draopshadow);
+}
+
+.lista-repertorio-m .overlap-4 {
+  position: relative;
+  width: 210px;
+  height: 126px;
+  top: 10px;
+  left: 5px;
+}
+
+.lista-repertorio-m .div-wrapper {
+  position: absolute;
+  top: 9px;
+  left: 14px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 38px;
+}
+
+.lista-repertorio-m .text-wrapper-3 {
+  position: relative;
+  width: fit-content;
+  margin-top: -1.00px;
+  margin-right: -8.00px;
+  font-family: "Poppins", Helvetica;
+  font-weight: 600;
+  color: #1a3c5e;
+  font-size: 16px;
+  letter-spacing: 0;
+  line-height: 18px;
+  white-space: nowrap;
+}
+
+.lista-repertorio-m .do-sol-lam-fa-re-mim {
+  position: relative;
+  width: fit-content;
+  margin-right: -103.00px;
+  font-family: "Poppins", Helvetica;
+  font-weight: 600;
+  color: #1a3c5e;
+  font-size: 14px;
+  letter-spacing: 0;
+  line-height: 18px;
+  white-space: nowrap;
+}
+
+.lista-repertorio-m .evangelio-wrapper {
+  position: absolute;
+  width: 124px;
+  height: 126px;
+  top: 0;
+  left: 0;
+}
+
+.lista-repertorio-m .evangelio {
+  position: absolute;
+  width: 129px;
+  height: 131px;
+  top: 0;
+  left: 0;
+  object-fit: cover;
+}
+
+.lista-repertorio-m .cart-wrapper {
+  top: 647px;
+  left: 22px;
+  position: absolute;
+  width: 375px;
+  height: 144px;
+  border-radius: 20px;
+  box-shadow: var(--img-draopshadow);
+}
+
+.lista-repertorio-m .cart-2 {
+  position: relative;
+  top: 19px;
+  left: 11px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 38px;
+}
+
+.lista-repertorio-m .image-placeholder-3 {
+  width: 122px;
+  height: 118px;
+  background: url(https://c.animaapp.com/mbgo2g0oCPNews/img/image-placeholder.png)
+    50% 50% / cover;
+  position: relative;
+  border-radius: 15px;
+}
+
+.lista-repertorio-m .pueblo-de-dios {
+  position: relative;
+  width: fit-content;
+  margin-right: -33.00px;
+  font-family: "Poppins", Helvetica;
+  font-weight: 400;
+  color: transparent;
+  font-size: 14px;
+  letter-spacing: 0;
+  line-height: 15px;
+  white-space: nowrap;
+}
+
+.lista-repertorio-m .span {
+  font-weight: 600;
+  color: #86939c;
+}
+
+.lista-repertorio-m .text-wrapper-4 {
+  font-weight: 600;
+  color: #c3c6c9;
+}
+
+.lista-repertorio-m .text-wrapper-5 {
+  position: relative;
+  width: fit-content;
+  margin-right: -108.00px;
+  font-family: "Poppins", Helvetica;
+  font-weight: 600;
+  color: #1a3c5e;
+  font-size: 14px;
+  letter-spacing: 0;
+  line-height: 18px;
+  white-space: nowrap;
+}
+
+.lista-repertorio-m .group-2 {
+  position: fixed;
+  width: 390px;
+  height: 31px;
+  top: 0;
+  left: 14px;
+}
+
+.lista-repertorio-m .notch {
+  position: absolute;
+  width: 191px;
+  height: 30px;
+  top: 0;
+  left: 99px;
+}
+
+.lista-repertorio-m .battery {
+  position: absolute;
+  width: 29px;
+  height: 11px;
+  top: 20px;
+  left: 361px;
+}
+
+.lista-repertorio-m .wifi {
+  position: absolute;
+  width: 18px;
+  height: 11px;
+  top: 20px;
+  left: 337px;
+}
+
+.lista-repertorio-m .mobile-signal {
+  position: absolute;
+  width: 20px;
+  height: 11px;
+  top: 20px;
+  left: 310px;
+}
+
+.lista-repertorio-m .element {
+  position: absolute;
+  width: 34px;
+  height: 11px;
+  top: 19px;
+  left: 0;
+}
