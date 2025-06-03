@@ -1,0 +1,7 @@
+{
+  "name": "voxapp",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular-standalone"
+}
