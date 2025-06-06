@@ -11,6 +11,16 @@ export const routes: Routes = [
     loadChildren: () =>
       import('./Mockup2/mockup2.routes').then(m => m.routes),  
   },
+   {
+    path: 'splash',
+    loadChildren: () =>
+      import('./splash/splash.routes').then(m => m.default),
+  },
+  {
+    path: '',
+    redirectTo: 'splash/pantalla1',
+    pathMatch: 'full',
+  },
   {
     path: '',
     redirectTo: 'home',

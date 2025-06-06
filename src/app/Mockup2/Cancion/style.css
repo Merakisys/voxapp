@@ -1,5 +1,5 @@
 .cancion-m {
-  background-color: #ffffff;
+  background-color: #ffffff; 
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -18,16 +18,25 @@
   position: absolute;
   width: 178px;
   height: 20px;
-  top: 65px;
-  left: 155px;
+  top: 50px; /* "Repertorio" más arriba */
+  left: 50%;
+  transform: translateX(-50%); /* Centramos "Repertorio" */
 }
 
 .cancion-m .repertorio {
   position: absolute;
   width: 102px;
   height: 21px;
-  top: 7px;
-  left: 2px;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%); /* Centramos el texto dentro de .group */
+  font-family: "Poppins", Helvetica;
+  font-weight: 700;
+  color: #1a3c5e;
+  font-size: 18px;
+  letter-spacing: 0;
+  line-height: 21px;
+  text-align: center;
 }
 
 .cancion-m .overlap {
@@ -426,26 +435,31 @@
 
 .cancion-m .frame {
   display: flex;
-  width: 358px;
+  width: 100%; 
   align-items: center;
-  justify-content: space-between;
-  position: fixed;
+  position: absolute;
   top: 95px;
-  left: 36px;
+  left: 0;
+  padding: 0 10px;
 }
 
 .cancion-m .frame-2 {
   display: inline-flex;
   align-items: center;
-  gap: 9px;
-  position: relative;
-  flex: 0 0 auto;
+  gap: 27px; 
+  position: absolute;
+  left: 10px; 
 }
+
 
 .cancion-m .vector {
   position: relative;
   width: 20px;
-  height: 28px;
+  height: 20px; 
+  background-image: url('https://c.animaapp.com/mbgoss9oyoMhGo/img/vector.svg');
+  background-size: 20px 20px; 
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 .cancion-m .text-wrapper-17 {
@@ -457,15 +471,16 @@
   color: #1a3c5e;
   font-size: 18px;
   letter-spacing: 0;
-  line-height: 50px;
+  line-height: 20px; 
   white-space: nowrap;
 }
 
 .cancion-m .frame-3 {
   display: inline-flex;
   align-items: center;
-  position: relative;
-  flex: 0 0 auto;
+  gap: 10px; 
+  position: absolute;
+  right: 10px; 
 }
 
 .cancion-m .text-wrapper-18 {
@@ -476,12 +491,26 @@
   color: #1a3c5e;
   font-size: 18px;
   letter-spacing: 0;
-  line-height: 50px;
+  line-height: 20px; 
   white-space: nowrap;
 }
 
+
 .cancion-m .keyboard-arrow-right {
   position: relative;
-  width: 56px;
-  height: 56px;
+  width: 40px;
+  height: 40px; 
+  background-size: 20px 20px;
+  background-repeat: no-repeat;
+  background-position: center;
+  
+}
+
+.scroll-wrapper {
+  height: 100vh;
+  width: 100%;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  display: flex;
+  justify-content: center;
 }
