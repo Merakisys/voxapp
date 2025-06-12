@@ -1,13 +1,66 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>liturgy</ion-title>
+    <ion-title>Lecturas Diarias</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">liturgy</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <div class="carousel-container">
+    
+    <!-- primer Carrusel  -->
+    <div class="carousel-section">
+      <h3 class="carousel-title"> Lecturas del Día</h3>
+      <swiper-container 
+        pagination="true" 
+        navigation="false" 
+        space-between="15"
+        slides-per-view="2"
+        autoplay="true"
+        loop="true"
+        class="overlay-swiper first-carousel">
+        
+        <swiper-slide *ngFor="let slide of slidesLecturas">
+          <div class="slide-wrapper">
+            <div class="image-container">
+              <img [src]="slide.image" [alt]="slide.title" />
+              <div class="overlay-gradient"></div>
+              <div class="text-overlay">
+                <h1 class="main-title">{{ slide.title }}</h1>
+                <p class="subtitle">{{ slide.subtitle }}</p>
+              </div>
+            </div>
+          </div>
+        </swiper-slide>
+        
+      </swiper-container>
+    </div>
+
+    <!-- segundo Carrusel  -->
+    <div class="carousel-section">
+      <h3 class="carousel-title"> Liturgia Musical </h3>
+      <swiper-container 
+        pagination="true" 
+        navigation="false" 
+        space-between="15"
+        slides-per-view="2"
+        autoplay="true"
+        loop="true"
+        class="overlay-swiper second-carousel">
+        
+        <swiper-slide *ngFor="let slide of slidesEventos">
+          <div class="slide-wrapper">
+            <div class="image-container">
+              <img [src]="slide.image" [alt]="slide.title" />
+              <div class="overlay-gradient"></div>
+              <div class="text-overlay">
+                <h1 class="main-title">{{ slide.title }}</h1>
+                
+              </div>
+            </div>
+          </div>
+        </swiper-slide>
+        
+      </swiper-container>
+    </div>
+  </div>
 </ion-content>
