@@ -1,0 +1,8 @@
+<!-- src/app/components/shared/card/card.component.html -->
+<ion-card class="card-item">
+  <ion-img [src]="item.image" [alt]="item.title"></ion-img>
+  <ion-card-content>
+    <h3>{{ item.title }}</h3>
+    <p *ngIf="item.subtitle">{{ item.subtitle }}</p>
+  </ion-card-content>
+</ion-card>

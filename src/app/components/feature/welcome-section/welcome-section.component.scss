@@ -1,0 +1,37 @@
+// src/app/components/feature/welcome-section/welcome-section.component.scss
+.welcome-section {
+  padding: 20px 16px;
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  min-height: 400px;
+}
+
+.welcome-header {
+  margin-bottom: 24px;
+  text-align: left;
+}
+
+.welcome-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--ion-color-dark);
+  margin: 0;
+  background: linear-gradient(45deg, #667eea 0%, #764ba2 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.carousel-container {
+  margin-top: 20px;
+}
+
+// Responsive
+@media (max-width: 768px) {
+  .welcome-section {
+    padding: 16px 12px;
+  }
+  
+  .welcome-title {
+    font-size: 1.6rem;
+  }
+}

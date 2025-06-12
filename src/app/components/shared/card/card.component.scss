@@ -1,0 +1,38 @@
+// src/app/components/shared/card/card.component.scss
+.card-item {
+  width: 250px;
+  min-width: 250px;
+  height: 300px;
+  margin: 0 8px;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+  ion-img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+  }
+
+  ion-card-content {
+    padding: 16px;
+    height: 120px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    h3 {
+      margin: 0 0 8px 0;
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: var(--ion-color-dark);
+    }
+
+    p {
+      margin: 0;
+      font-size: 0.9rem;
+      color: var(--ion-color-medium);
+      line-height: 1.4;
+    }
+  }
+}

@@ -1,0 +1,85 @@
+// src/app/components/shared/carousel/carousel.component.scss
+.carousel-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  max-width: 100vw;
+}
+
+.carousel-wrapper {
+  flex: 1;
+  overflow: hidden;
+  margin: 0 20px;
+}
+
+.carousel-track {
+  display: flex;
+  transition: transform 0.3s ease-in-out;
+  will-change: transform;
+}
+
+.nav-button {
+  --color: var(--ion-color-primary);
+  --background: rgba(255, 255, 255, 0.9);
+  --border-radius: 50%;
+  position: absolute;
+  z-index: 10;
+  width: 40px;
+  height: 40px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+
+  &.prev-button {
+    left: 0;
+  }
+
+  &.next-button {
+    right: 0;
+  }
+
+  ion-icon {
+    font-size: 24px;
+  }
+}
+
+.indicators {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 20px;
+
+  .indicator {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    border: none;
+    background-color: rgba(var(--ion-color-primary-rgb), 0.3);
+    cursor: pointer;
+    transition: all 0.3s ease;
+
+    &.active {
+      background-color: var(--ion-color-primary);
+      transform: scale(1.2);
+    }
+
+    &:hover {
+      background-color: rgba(var(--ion-color-primary-rgb), 0.6);
+    }
+  }
+}
+
+// Responsive
+@media (max-width: 768px) {
+  .carousel-wrapper {
+    margin: 0 10px;
+  }
+  
+  .nav-button {
+    width: 32px;
+    height: 32px;
+    
+    ion-icon {
+      font-size: 18px;
+    }
+  }
+}
