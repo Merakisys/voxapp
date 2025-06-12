@@ -4,13 +4,13 @@ import { FormsModule } from '@angular/forms';
 import { IonContent, IonHeader, IonTitle, IonToolbar } from '@ionic/angular/standalone';
 
 @Component({
-  selector: 'app-repertoire',
-  templateUrl: './repertoire.page.html',
-  styleUrls: ['./repertoire.page.scss'],
+  selector: 'app-repertories',
+  templateUrl: './repertories.page.html',
+  styleUrls: ['./repertories.page.scss'],
   standalone: true,
   imports: [IonContent, IonHeader, IonTitle, IonToolbar, CommonModule, FormsModule]
 })
-export class RepertoirePage implements OnInit {
+export class RepertoriesPage implements OnInit {
 
   constructor() { }
 
