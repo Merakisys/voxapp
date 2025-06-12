@@ -7,20 +7,91 @@
   <link rel="stylesheet" href="globals.css" />
   <link rel="stylesheet" href="styleguide.css" />
   <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css?family=Poppins:400,500,600&display=swap" rel="stylesheet" />
 </head>
 
-<body>
+<body style="background:#fff; font-family: 'Poppins', sans-serif;">
   <div class="configuracion">
     <div class="scroll-wrapper">
       <div class="overlap-group-wrapper">
         <div class="overlap-group">
-          <img class="configuracin" src="https://c.animaapp.com/mbgngiymmNY62Q/img/configuraci-n.png" />
-          <img class="subtract" src="https://c.animaapp.com/mbgngiymmNY62Q/img/subtract.svg" />
+        
+          <button class="volver-btn" aria-label="Volver" style="background:none;box-shadow:none;">
+            <svg class="ic-baseline-less" xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24">
+              <path fill="#3D6FA2" d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z" />
+            </svg>
+          </button>
 
-          <div class="item"><img class="home" src="https://c.animaapp.com/mbgngiymmNY62Q/img/home.svg" /></div>
-          <img class="union" src="https://c.animaapp.com/mbgngiymmNY62Q/img/union.svg" />
-          <img class="account-circle" src="https://c.animaapp.com/mbgngiymmNY62Q/img/account-circle.svg" />
-          <img class="rectangle" src="https://c.animaapp.com/mbgngiymmNY62Q/img/rectangle-1.png" />
+        
+          <div style="position:absolute;top:60px;left:30px;width:370px;">
+            <div style="display:flex;align-items:center;">
+             
+              <span style="width:64px;height:64px;display:inline-block;margin-right:16px;">
+                <svg width="64" height="64" viewBox="0 0 64 64" fill="none">
+                  <circle cx="32" cy="32" r="32" fill="#E0E7EF" />
+                  <circle cx="32" cy="26" r="12" fill="#6B7A90" />
+                  <ellipse cx="32" cy="48" rx="18" ry="10" fill="#6B7A90" />
+                </svg>
+              </span>
+              <div>
+                <div style="font-size:20px;font-weight:600;color:#3D6FA2;margin-bottom:24px;">Mi Perfil</div>
+                <div style="font-size:25px;font-weight:600;color:#1A3C5E;margin-bottom:2px;">{{ nombre }}</div>
+                <div style="font-size:16px;color:#6b7a90;margin-bottom:8px;">{{ email.replace('@', '&#64;') }}</div>
+                <button style="margin-top:8px;padding:6px 22px;background:#3D6FA2;color:#fff;border:none;border-radius:6px;font-size:15px;font-weight:500;"
+                  (click)="abrirModalEditar()">Editar</button>
+              </div>
+            </div>
+          </div>
+
+        
+          <div style="position:absolute;top:210px;left:30px;width:370px;">
+            <a href="#" style="display:flex;align-items:center;padding:18px 0;">
+            
+              <span style="width:28px;height:28px;display:inline-block;margin-right:18px;">
+                <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
+                  <circle cx="14" cy="14" r="14" fill="#E0E7EF" />
+                  <polygon points="11,9 21,14 11,19" fill="#2d4263" />
+                </svg>
+              </span>
+              <span style="font-size:17px;color:#3D6FA2;font-weight:600;">Canciones</span>
+            </a>
+          
+            <hr style="border:none;border-top:2px solid #3D6FA2;margin:0 0 0 0px;">
+          </div>
+
+         
+          <div style="position:absolute;top:280px;left:30px;width:370px;">
+            <a href="#" style="display:flex;align-items:center;padding:18px 0;">
+            
+              <span style="width:28px;height:28px;display:inline-block;margin-right:18px;">
+                <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
+                  <circle cx="14" cy="14" r="14" fill="#E0E7EF" />
+                  <path d="M10 9v10h4v-2h-2v-6h2V9h-4zm6.71 4.29l-1.42 1.42L18 16l-2.71 2.29 1.42 1.42L21 16l-4.29-4.29z" fill="#2d4263" />
+                </svg>
+              </span>
+              <span style="font-size:17px;color:#3D6FA2;font-weight:600;">Cerrar Sesión</span>
+            </a>
+          </div>
+
+        
+          <div *ngIf="modalEditar" style="display:flex;position:fixed;top:0;left:0;width:100vw;height:100vh;background:rgba(44,66,99,0.18);z-index:1000;align-items:center;justify-content:center;">
+            <div style="background:#fff;border-radius:16px;box-shadow:0 8px 32px rgba(44,66,99,0.18);padding:32px 28px;min-width:320px;max-width:90vw;display:flex;flex-direction:column;gap:18px;position:relative;">
+              <span (click)="cerrarModalEditar()" style="position:absolute;top:12px;right:18px;font-size:22px;color:#bfc9d9;cursor:pointer;font-weight:600;">&times;</span>
+              <h2 style="font-size:20px;font-weight:600;color:#3D6FA2;margin-bottom:10px;">Editar perfil</h2>
+              <form (ngSubmit)="actualizarPerfil()" autocomplete="off">
+                <label for="input-nombre" style="font-size:15px;color:#2d4263;font-weight:500;">Nombre</label>
+                <input id="input-nombre" type="text" [(ngModel)]="nuevoNombre" name="nuevoNombre"
+                  style="width:100%;padding:10px 12px;font-size:16px;border:1px solid #bfc9d9;border-radius:7px;margin-bottom:14px;font-family:'Poppins',sans-serif;" required>
+                <label for="input-email" style="font-size:15px;color:#2d4263;font-weight:500;">Correo</label>
+                <input id="input-email" type="email" [(ngModel)]="nuevoEmail" name="nuevoEmail"
+                  style="width:100%;padding:10px 12px;font-size:16px;border:1px solid #bfc9d9;border-radius:7px;margin-bottom:14px;font-family:'Poppins',sans-serif;" required>
+                <div style="display:flex;gap:16px;justify-content:flex-end;margin-top:8px;">
+                  <button type="button" (click)="cerrarModalEditar()" style="background:#bfc9d9;color:#2d4263;border:none;border-radius:7px;font-size:15px;font-weight:500;padding:8px 22px;cursor:pointer;">Cancelar</button>
+                  <button type="submit" style="background:#3D6FA2;color:#fff;border:none;border-radius:7px;font-size:15px;font-weight:500;padding:8px 22px;cursor:pointer;">Actualizar</button>
+                </div>
+              </form>
+            </div>
+          </div>
         </div>
       </div>
     </div>

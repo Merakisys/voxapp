@@ -1,0 +1,33 @@
+<div class="footer-layout">
+  <div class="footer-navigation">
+    <!-- Fondo del footer -->
+    <div class="rectangle"></div> <!-- Usamos div con fondo para evitar problemas de CORS con la imagen -->
+    
+    <!-- Icono Home -->
+    <div class="nav-item home-item" (click)="navigateTo('/configuracion')">
+      <img class="home" src="https://c.animaapp.com/mbgngiymmNY62Q/img/home.svg" alt="Home" />
+    </div>
+    
+    <!-- Icono Música -->
+    <div class="nav-item music-item" (click)="navigateTo('/canciones')">
+      <img class="music" src="https://c.animaapp.com/mbgngiymmNY62Q/img/union.svg" alt="Música" />
+    </div>
+    
+    <!-- Icono Más (FAB) -->
+    <div class="nav-item fab-item" (click)="navigateTo('/nueva')">
+      <ion-fab-button color="primary">
+        <ion-icon name="add"></ion-icon>
+      </ion-fab-button>
+    </div>
+    
+    <!-- Icono Documentos -->
+    <div class="nav-item doc-item" (click)="navigateTo('/documentos')">
+      <img class="doc" src="https://c.animaapp.com/mbgngiymmNY62Q/img/subtract.svg" alt="Documentos" />
+    </div>
+    
+    <!-- Icono Perfil -->
+    <div class="nav-item profile-item" (click)="navigateTo('/perfil')">
+      <img class="profile" src="https://c.animaapp.com/mbgngiymmNY62Q/img/account-circle.svg" alt="Perfil" />
+    </div>
+  </div>
+</div>

@@ -157,13 +157,18 @@
 }
 
 .lista-repertorio-m .cart-card {
-  position: absolute;
-  width: 375px;
-  height: 144px;
-  top: 140px;
-  left: 29px;
+  position: relative;
+  width: 90%;
+  margin: 0 auto;
+  padding: 15px;
+   background-color: #E8ECEF;;
   border-radius: 20px;
-  box-shadow: var(--img-draopshadow);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease;
+}
+
+.lista-repertorio-m .cart-card:hover {
+  transform: translateY(-2px);
 }
 
 .lista-repertorio-m .overlap-2 {
@@ -175,88 +180,56 @@
 }
 
 .lista-repertorio-m .cart {
-  display: inline-flex;
+  display: flex;
   align-items: center;
-  justify-content: center;
-  gap: 38px;
+  gap: 15px;
   position: absolute;
   top: 11px;
   left: 15px;
 }
 
 .lista-repertorio-m .cart-layout {
-  display: inline-flex;
+  display: flex;
   align-items: center;
-  justify-content: center;
-  gap: 18px;
+  gap: 15px;
+  width: 100%;
   position: relative;
   flex: 0 0 auto;
 }
 
 .lista-repertorio-m .image-placeholder {
-  width: 106px;
-  height: 106px;
-  background-color: #4a90e2;
-  opacity: 0.5;
-  position: relative;
-  border-radius: 15px;
+  width: 80px;
+  height: 80px;
+  border-radius: 12px;
+  object-fit: cover;
 }
 
 .lista-repertorio-m .cart-text {
+  flex: 1;
   display: flex;
   flex-direction: column;
-  width: 72px;
-  align-items: flex-start;
-  gap: 10px;
-  position: relative;
+  gap: 8px;
 }
 
 .lista-repertorio-m .text-wrapper {
-  position: relative;
-  width: fit-content;
-  margin-top: -1.00px;
   font-family: "Poppins", Helvetica;
   font-weight: 600;
   color: #1a3c5e;
   font-size: 16px;
-  letter-spacing: 0;
-  line-height: 18px;
-  white-space: nowrap;
 }
 
 .lista-repertorio-m .text-wrapper-2 {
-  position: relative;
-  width: fit-content;
-  margin-right: -33.00px;
   font-family: "Poppins", Helvetica;
-  font-weight: 600;
+  font-weight: 500;
   color: #86939c;
   font-size: 14px;
-  letter-spacing: 0;
-  line-height: 15px;
-  white-space: nowrap;
 }
 
-.lista-repertorio-m .lam-rem-sol-do-fa {
-  position: relative;
-  width: fit-content;
-  margin-right: -111.00px;
+.lista-repertorio-m .descripcion {
   font-family: "Poppins", Helvetica;
-  font-weight: 600;
+  font-weight: 400;
   color: #1a3c5e;
-  font-size: 14px;
-  letter-spacing: 0;
-  line-height: 18px;
-  white-space: nowrap;
-}
-
-.lista-repertorio-m .entrada {
-  position: absolute;
-  width: 133px;
-  height: 133px;
-  top: 0;
-  left: 0;
-  object-fit: cover;
+  font-size: 12px;
 }
 
 .lista-repertorio-m .overlap-wrapper {
@@ -509,4 +482,28 @@
   height: 11px;
   top: 19px;
   left: 0;
+}
+.sort-down.rotated {
+  transform: translateY(-50%) rotate(180deg);
+  transition: transform 0.3s ease;
+}
+.scroll-wrapper {
+  height: 100vh;
+  width: 100%;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  display: flex;
+  justify-content: center;
+}
+
+.canciones-container {
+  position: relative;
+  padding: 20px;
+  margin-top: 120px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px; /* Espacio entre las canciones */
+  max-width: 100%;
+  overflow-y: auto;
+ 
 }

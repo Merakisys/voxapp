@@ -1,99 +1,60 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta charset="utf-8" />
-    <link rel="stylesheet" href="globals.css" />
-    <link rel="stylesheet" href="styleguide.css" />
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
-    <div class="repertorio-m">
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="utf-8" />
+  <link rel="stylesheet" href="globals.css" />
+  <link rel="stylesheet" href="styleguide.css" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="repertorio-m">
+    <div class="scroll-wrapper">
       <div class="div">
         <div class="group">
-          <div class="div-wrapper"><div class="text-wrapper">Tiempo de Liturgia</div></div>
+          <div class="div-wrapper" (click)="toggleTiempos()">
+            <div class="text-wrapper">{{ tiempoSeleccionado }}</div>
+          </div>
+          <!-- Menú desplegable de tiempos litúrgicos -->
+          <div class="tiempo-menu" *ngIf="mostrarTiempos">
+            <div class="tiempo-item" *ngFor="let tiempo of tiemposLiturgicos" 
+                 (click)="seleccionarTiempo(tiempo)">
+              {{ tiempo }}
+            </div>
+          </div>
         </div>
         <div class="frame">
           <div class="group-2">
             <div class="text-wrapper-2">Lista de Repertorios</div>
-            <div class="group-3">
-              <div class="overlap-group-wrapper">
-                <div class="overlap-group"><div class="text-wrapper-3">Favoritos</div></div>
-              </div>
-              <div class="overlap-wrapper">
-                <div class="overlap-group"><div class="text-wrapper-4">Descargados</div></div>
-              </div>
-              <div class="group-4">
-                <div class="overlap-group"><div class="text-wrapper-4">Mis Repertorios</div></div>
-              </div>
-              <div class="group-5">
-                <div class="overlap-group"><div class="text-wrapper-4">Sugerencias</div></div>
+            <div class="scroll-container">
+              <div class="repertorios-wrapper">
+                <div *ngFor="let repertorio of repertoriosFiltrados" 
+                     class="repertorio-item" 
+                     (click)="verRepertorio(repertorio)">
+                  <div class="overlap-group">
+                    <div class="text-wrapper-4">{{ repertorio.nombre }}</div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
-          <div class="group-6"><div class="text-wrapper-2">Repertorios Observados</div></div>
         </div>
-        <div class="group-7"><div class="text-wrapper-2">Repertorios Recientes</div></div>
         <div class="group-8">
-          <div class="text-wrapper-5">Buscar Repertorios</div>
-          <img class="vector" src="https://c.animaapp.com/mbgnx6p0tp1yZg/img/vector-6.svg" />
+          <app-busqueda (searchChange)="onSearchChange($event)"></app-busqueda>
         </div>
-        <img class="line" src="https://c.animaapp.com/mbgnx6p0tp1yZg/img/line-9.svg" />
         <div class="group-9">
           <img class="repertorio" src="https://c.animaapp.com/mbgnx6p0tp1yZg/img/repertorio.png" />
-          <img class="ic-baseline-less" src="https://c.animaapp.com/mbgnx6p0tp1yZg/img/ic-baseline-less-than.png" />
+          <svg class="ic-baseline-less" (click)="irAHome()" xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" style="cursor: pointer;">
+            <path fill="#3D6FA2" d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z" />
+          </svg>
         </div>
-        <div class="sample">
-          <div class="overlap">
-            <img class="rectangle" src="https://c.animaapp.com/mbgnx6p0tp1yZg/img/rectangle-1.png" />
-            <div class="items">
-              <div class="item"><img class="home" src="https://c.animaapp.com/mbgnx6p0tp1yZg/img/home.svg" /></div>
-              <div class="item"><img class="music" /></div>
-              <div class="item-2"></div>
-              <div class="item-2"></div>
-            </div>
-            <div class="button-plus">
-              <img class="bx-plus-svg" src="https://c.animaapp.com/mbgnx6p0tp1yZg/img/bx-plus-svg.svg" />
-            </div>
-            <img class="book-store" />
-            <img class="subtract" src="https://c.animaapp.com/mbgnx6p0tp1yZg/img/subtract.svg" />
-          </div>
-        </div>
-        <img class="img" src="https://c.animaapp.com/mbgnx6p0tp1yZg/img/vector.png" />
-        <img class="vector-2" src="https://c.animaapp.com/mbgnx6p0tp1yZg/img/vector-1.png" />
-        <img class="vector-3" src="https://c.animaapp.com/mbgnx6p0tp1yZg/img/vector-2.png" />
-        <img class="vector-4" src="https://c.animaapp.com/mbgnx6p0tp1yZg/img/vector-3.png" />
-        <img class="vector-5" src="https://c.animaapp.com/mbgnx6p0tp1yZg/img/vector-4.png" />
-        <img class="vector-6" src="https://c.animaapp.com/mbgnx6p0tp1yZg/img/vector-5.png" />
-        <div class="group-10">
-          <img class="notch" src="https://c.animaapp.com/mbgnx6p0tp1yZg/img/notch.svg" />
-          <img class="battery" src="https://c.animaapp.com/mbgnx6p0tp1yZg/img/battery.png" />
-          <img class="wifi" src="https://c.animaapp.com/mbgnx6p0tp1yZg/img/wifi.svg" />
-          <img class="mobile-signal" src="https://c.animaapp.com/mbgnx6p0tp1yZg/img/mobile-signal.svg" />
-          <img class="element" src="https://c.animaapp.com/mbgnx6p0tp1yZg/img/9-41.svg" />
-        </div>
-        <div class="group-10">
-          <img class="notch" src="https://c.animaapp.com/mbgnx6p0tp1yZg/img/notch.svg" />
-          <img class="battery" src="https://c.animaapp.com/mbgnx6p0tp1yZg/img/battery-1.png" />
-          <img class="wifi" src="https://c.animaapp.com/mbgnx6p0tp1yZg/img/wifi.svg" />
-          <img class="mobile-signal" src="https://c.animaapp.com/mbgnx6p0tp1yZg/img/mobile-signal.svg" />
-          <img class="element" src="https://c.animaapp.com/mbgnx6p0tp1yZg/img/9-41.svg" />
-        </div>
-        <div class="group-10">
-          <img class="notch" src="https://c.animaapp.com/mbgnx6p0tp1yZg/img/notch.svg" />
-          <img class="battery" src="https://c.animaapp.com/mbgnx6p0tp1yZg/img/battery-2.png" />
-          <img class="wifi" src="https://c.animaapp.com/mbgnx6p0tp1yZg/img/wifi.svg" />
-          <img class="mobile-signal" src="https://c.animaapp.com/mbgnx6p0tp1yZg/img/mobile-signal.svg" />
-          <img class="element" src="https://c.animaapp.com/mbgnx6p0tp1yZg/img/9-41.svg" />
-        </div>
-        <div class="group-10">
-          <img class="notch" src="https://c.animaapp.com/mbgnx6p0tp1yZg/img/notch.svg" />
-          <img class="battery" src="https://c.animaapp.com/mbgnx6p0tp1yZg/img/battery-3.png" />
-          <img class="wifi" src="https://c.animaapp.com/mbgnx6p0tp1yZg/img/wifi.svg" />
-          <img class="mobile-signal" src="https://c.animaapp.com/mbgnx6p0tp1yZg/img/mobile-signal.svg" />
-          <img class="element" src="https://c.animaapp.com/mbgnx6p0tp1yZg/img/9-41.svg" />
-        </div>
+        <!-- Botón crear -->
+        <button class="overlap-3" (click)="crearRepertorio()">
+          <div class="rectangle-3"></div>
+          <img class="aadir-repertorio" src="https://c.animaapp.com/mbgnucpryW9snS/img/a-adir-repertorio.png" />
+        </button>
       </div>
     </div>
-  </body>
+  </div>
+</body>
 </html>

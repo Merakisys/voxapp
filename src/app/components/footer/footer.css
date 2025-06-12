@@ -1,0 +1,85 @@
+.footer-layout {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 89px;
+  z-index: 1000;
+  max-width: 430px;
+  margin: 0 auto;
+  background-color: #ffffff;
+  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1); /* Sombra sutil para elevar el footer */
+}
+
+.footer-navigation {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 0 10px;
+}
+
+.rectangle {
+  position: absolute;
+  width: 100%;
+  height: 89px;
+  top: 0;
+  left: 0;
+  background-color: #ffffff; /* Fondo blanco como en la imagen */
+  z-index: 1;
+}
+
+.nav-item {
+  cursor: pointer;
+  transition: transform 0.2s ease;
+  text-align: center;
+}
+
+.nav-item:hover {
+  transform: scale(1.1);
+}
+
+.nav-item:active {
+  transform: scale(0.9);
+}
+
+.home-item {
+  width: 38px;
+  height: 38px;
+}
+
+.music-item {
+  width: 29px;
+  height: 29px;
+}
+
+.fab-item {
+  width: 56px;
+  height: 56px;
+}
+
+.doc-item {
+  width: 29px;
+  height: 29px;
+}
+
+.profile-item {
+  width: 38px;
+  height: 38px;
+}
+
+.home, .music, .doc, .profile {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.fab-item ion-fab-button {
+  --background: #4a90e2; /* Color azul como en la imagen */
+  --box-shadow: 0 4px 16px rgba(74, 144, 226, 0.3);
+  width: 56px;
+  height: 56px;
+  font-size: 24px;
+}

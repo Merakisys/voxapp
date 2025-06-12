@@ -1,110 +1,85 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta charset="utf-8" />
-    <link rel="stylesheet" href="globals.css" />
-    <link rel="stylesheet" href="styleguide.css" />
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
-    <div class="crear-repertorio-m">
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="utf-8" />
+  <link rel="stylesheet" href="globals.css" />
+  <link rel="stylesheet" href="styleguide.css" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <div class="crear-repertorio-m">
+    <div class="scroll-wrapper">
       <div class="div">
         <div class="overlap">
-          <div class="rectangle"></div>
-          <div class="text-wrapper">Canciones recomendadas</div>
-          <div class="text-wrapper">Canciones recomendadas</div>
-          <div class="text-wrapper">Canciones recomendadas</div>
-          <img class="dibujo-camino" src="https://c.animaapp.com/mbgnucpryW9snS/img/dibujo-camino-sinodal-1.png" />
-          <div class="text-wrapper-2">Vienen con alegría</div>
-          <div class="text-wrapper-3">Vamos cantando</div>
-          <p class="p">Somos un pueblo que camina</p>
-          <div class="group">
-            <div class="overlap-group">
-              <img
-                class="il-fullxfull"
-                src="https://c.animaapp.com/mbgnucpryW9snS/img/il-fullxfull-6114817124-nbjq-2.png"
-              />
-            </div>
-          </div>
-          <img class="check-circle-outline" src="https://c.animaapp.com/mbgnucpryW9snS/img/check-circle-outline.svg" />
-          <img class="img" src="https://c.animaapp.com/mbgnucpryW9snS/img/check-circle-outline.svg" />
-          <img class="element-percent" src="https://c.animaapp.com/mbgnucpryW9snS/img/0-percent.png" />
-          <div class="hq-wrapper"><img class="hq" src="https://c.animaapp.com/mbgnucpryW9snS/img/hq720.png" /></div>
+          <app-container-vertical
+            [tiempoSeleccionado]="seleccionadoTiempo"
+            [tipoCantoSeleccionado]="seleccionadoEntrada"
+            (itemToggled)="onItemToggled($event)">
+          </app-container-vertical>
+          <app-container-horizontal
+            *ngIf="mostrarContainer"
+            [isVisible]="mostrarContainer"
+            [selectedSong]="selectedSong"
+            [ngStyle]="containerPosition"
+            (itemRemoved)="onItemRemoved($event)">
+          </app-container-horizontal>
         </div>
         <div class="overlap-2">
-          <div class="rectangle-2"></div>
-          <div class="text-wrapper-4">Nombre del Repertorio</div>
-          <img class="sort-down" src="https://c.animaapp.com/mbgnucpryW9snS/img/sort-down.png" />
-        </div>
-        <div class="overlap-3">
-          <img class="check-circle-outline-2" />
-          <div class="rectangle-3"></div>
-          <img class="aadir-repertorio" src="https://c.animaapp.com/mbgnucpryW9snS/img/a-adir-repertorio.png" />
-        </div>
-        <div class="group-2">
-          <img class="notch" src="https://c.animaapp.com/mbgnucpryW9snS/img/notch.svg" />
-          <img class="battery" src="https://c.animaapp.com/mbgnucpryW9snS/img/battery.png" />
-          <img class="wifi" src="https://c.animaapp.com/mbgnucpryW9snS/img/wifi.svg" />
-          <img class="mobile-signal" src="https://c.animaapp.com/mbgnucpryW9snS/img/mobile-signal.svg" />
-          <img class="element" src="https://c.animaapp.com/mbgnucpryW9snS/img/9-41.svg" />
-        </div>
-        <div class="group-3">
-          <img class="nuevo-repertorio" src="https://c.animaapp.com/mbgnucpryW9snS/img/nuevo-repertorio.png" />
-          <img class="ic-baseline-less" src="https://c.animaapp.com/mbgnucpryW9snS/img/ic-baseline-less-than.png" />
-        </div>
-        <div class="overlap-4">
-          <div class="overlap-5">
-            <div class="overlap-6">
-              <div class="overlap-group-2">
-                <div class="text-wrapper-5">Vienen con alegría</div>
-                <div class="text-wrapper-6">Canción de entrada</div>
-                <div class="rectangle-4"></div>
-                <img class="vector" src="https://c.animaapp.com/mbgnucpryW9snS/img/vector.svg" />
+          <div class="rectangle-2">
+            <input type="text" class="text-wrapper-4" placeholder="Nombre del Repertorio"
+              [(ngModel)]="nombreRepertorio">
+          </div>
+
+          <!-- Primer dropdown -->
+          <div class="dropdown-container">
+            <button class="category-button tiempo-ordinario" (click)="toggleTiempo()">
+              {{ seleccionadoTiempo }}
+              <img class="sort-down" [class.rotated]="mostrarTiempo"
+                src="https://c.animaapp.com/mbgnucpryW9snS/img/sort-down.png" />
+            </button>
+            <div class="dropdown-menu" *ngIf="mostrarTiempo">
+              <div class="dropdown-item" *ngFor="let tiempo of tiemposLiturgicos" (click)="seleccionarTiempo(tiempo)">
+                {{ tiempo }}
               </div>
-              <div class="text-wrapper-7">1</div>
             </div>
-            <img
-              class="il-fullxfull-2"
-              src="https://c.animaapp.com/mbgnucpryW9snS/img/il-fullxfull-6114817124-nbjq-2.png"
-            />
           </div>
-          <div class="overlap-7">
-            <div class="overlap-8">
-              <p class="text-wrapper-8">Somos un pueblo que camina</p>
-              <p class="canci-n-de-entrada">
-                <span class="span">Canción </span>
-                <span class="text-wrapper-9">de</span>
-                <span class="span"> entrada</span>
-              </p>
+
+          <!-- Segundo dropdown -->
+          <div class="dropdown-container">
+            <button class="category-button cantos-entrada" (click)="toggleEntrada()">
+              {{ seleccionadoEntrada }}
+              <img class="sort-down" [class.rotated]="mostrarEntrada"
+                src="https://c.animaapp.com/mbgnucpryW9snS/img/sort-down.png" />
+            </button>
+            <div class="dropdown-menu" *ngIf="mostrarEntrada">
+              <div class="dropdown-item" *ngFor="let canto of cantosParaMostrar" (click)="seleccionarEntrada(canto)">
+                {{ canto }}
+              </div>
             </div>
-            <div class="https-lottiefiles">
-              <img
-                class="dibujo-camino-2"
-                src="https://c.animaapp.com/mbgnucpryW9snS/img/dibujo-camino-sinodal-1.png"
-              />
-              <div class="rectangle-5"></div>
-              <img class="vector-2" src="https://c.animaapp.com/mbgnucpryW9snS/img/vector.svg" />
-            </div>
-            <div class="vector-wrapper">
-              <img class="vector-3" src="https://c.animaapp.com/mbgnucpryW9snS/img/vector.svg" />
-            </div>
-            <div class="text-wrapper-10">2</div>
           </div>
-          <div class="text-wrapper-11">Canciones Agregadas</div>
-          <div class="rectangle-wrapper"><div class="rectangle-6"></div></div>
         </div>
-        <div class="overlap-9">
-          <img class="subtract" src="https://c.animaapp.com/mbgnucpryW9snS/img/subtract.svg" />
-          <div class="item"><img class="home" src="https://c.animaapp.com/mbgnucpryW9snS/img/home.svg" /></div>
-          <img class="union" src="https://c.animaapp.com/mbgnucpryW9snS/img/union.svg" />
-          <img class="account-circle" src="https://c.animaapp.com/mbgnucpryW9snS/img/account-circle.svg" />
-          <div class="button-plus">
-            <img class="bx-plus-svg" src="https://c.animaapp.com/mbgnucpryW9snS/img/bx-plus-svg.svg" />
-          </div>
-          <img class="rectangle-7" src="https://c.animaapp.com/mbgnucpryW9snS/img/rectangle-1.png" />
+
+        <!-- Botón volver -->
+        <div class="group-3" (click)="volverARepertorio()">
+          <img class="nuevo-repertorio" src="https://c.animaapp.com/mbgnucpryW9snS/img/nuevo-repertorio.png" />
+          <svg class="ic-baseline-less" xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24">
+            <path fill="#3D6FA2" d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z" />
+          </svg>
         </div>
+
+        <!-- Botón añadir repertorio -->
+        <div class="overlap-3" [class.disabled]="!hasItems" [style.pointer-events]="hasItems ? 'auto' : 'none'" (click)="anadirRepertorio()">
+          <div class="rectangle-3" [style.opacity]="hasItems ? '1' : '0.5'"></div>
+          <img class="aadir-repertorio" [style.opacity]="hasItems ? '1' : '0.5'" src="https://c.animaapp.com/mbgnucpryW9snS/img/a-adir-repertorio.png" />
+        </div>
+
+        
       </div>
     </div>
-  </body>
+  </div>
+</body>
+
 </html>

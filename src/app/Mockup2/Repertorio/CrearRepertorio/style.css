@@ -11,6 +11,7 @@
   width: 430px;
   height: 932px;
   position: relative;
+  z-index: 1;
 }
 
 .crear-repertorio-m .overlap {
@@ -190,7 +191,6 @@
 }
 
 .crear-repertorio-m .text-wrapper-4 {
-  position: absolute;
   width: 318px;
   top: 6px;
   left: 4px;
@@ -201,14 +201,70 @@
   text-align: center;
   letter-spacing: 0;
   line-height: normal;
+  background: transparent;
+  border: none;
+  outline: none;
+  position: absolute;
+}
+
+.crear-repertorio-m .text-wrapper-4::placeholder {
+  color: #1a3c5e;
+  opacity: 0.8;
+}
+
+.crear-repertorio-m .text-wrapper-4:focus {
+  color: #1a3c5e;
 }
 
 .crear-repertorio-m .sort-down {
+  filter: brightness(0) invert(1);
   position: absolute;
-  width: 40px;
-  height: 40px;
-  top: 61px;
-  left: 314px;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: transform 0.3s ease; 
+  width: 30px;
+  height: 30px;
+  object-fit: contain;
+}
+
+.category-button {
+  position: absolute;
+  width: 170px;
+  min-height: 40px;
+  background-color: #3D6FA2;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  font-family: "Poppins", Helvetica;
+  font-weight: 400;
+  font-size: 16px;
+  cursor: pointer;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s, box-shadow 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+   padding-left: 20px;
+   padding-right: 35px;
+  
+
+}
+
+.category-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0px 6px 8px rgba(0, 0, 0, 0.2);
+}
+
+.tiempo-ordinario {
+  top: 60px;
+  left: -15px;
+}
+
+.cantos-entrada {
+  top: 60px;
+  left: 180px;
 }
 
 .crear-repertorio-m .overlap-3 {
@@ -217,14 +273,6 @@
   height: 47px;
   top: 749px;
   left: 96px;
-}
-
-.crear-repertorio-m .check-circle-outline-2 {
-  position: absolute;
-  width: 30px;
-  height: 27px;
-  top: 5px;
-  left: 233px;
 }
 
 .crear-repertorio-m .rectangle-3 {
@@ -248,54 +296,6 @@
   left: 56px;
 }
 
-.crear-repertorio-m .group-2 {
-  position: absolute;
-  width: 390px;
-  height: 31px;
-  top: 0;
-  left: 12px;
-}
-
-.crear-repertorio-m .notch {
-  position: absolute;
-  width: 191px;
-  height: 30px;
-  top: 0;
-  left: 99px;
-}
-
-.crear-repertorio-m .battery {
-  position: absolute;
-  width: 29px;
-  height: 11px;
-  top: 20px;
-  left: 361px;
-}
-
-.crear-repertorio-m .wifi {
-  position: absolute;
-  width: 18px;
-  height: 11px;
-  top: 20px;
-  left: 337px;
-}
-
-.crear-repertorio-m .mobile-signal {
-  position: absolute;
-  width: 20px;
-  height: 11px;
-  top: 20px;
-  left: 310px;
-}
-
-.crear-repertorio-m .element {
-  position: absolute;
-  width: 34px;
-  height: 11px;
-  top: 19px;
-  left: 0;
-}
-
 .crear-repertorio-m .group-3 {
   position: absolute;
   width: 336px;
@@ -313,13 +313,13 @@
 }
 
 .crear-repertorio-m .ic-baseline-less {
+  
   position: absolute;
-  width: 30px;
-  height: 30px;
-  top: 5px;
+  width: 40px;
+  height: 40px;
+  top: -2px;
   left: 0;
 }
-
 .crear-repertorio-m .overlap-4 {
   position: absolute;
   width: 373px;
@@ -468,7 +468,7 @@
   width: 163px;
   top: 30px;
   left: 9px;
-  font-family: "Inknut Antiqua", Helvetica;
+  font-family: "Poppins", Helvetica;
   font-weight: 400;
   color: #00000094;
   font-size: 12px;
@@ -478,7 +478,7 @@
 }
 
 .crear-repertorio-m .span {
-  font-family: "Inknut Antiqua", Helvetica;
+  font-family: "Poppins", Helvetica;
   font-weight: 400;
   color: #00000094;
   font-size: 12px;
@@ -553,7 +553,7 @@
   width: 17px;
   top: 47px;
   left: 290px;
-  font-family: "Inknut Antiqua", Helvetica;
+  font-family: "Poppins", Helvetica;
   font-weight: 400;
   color: #00000094;
   font-size: 12px;
@@ -672,4 +672,51 @@
   height: 88px;
   top: 36px;
   left: 0;
+}
+
+.scroll-wrapper {
+  height: 100vh;
+  width: 100%;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  display: flex;
+  justify-content: center;
+}
+.crear-repertorio-m .sort-down.rotated {
+  transform: translateY(-50%) rotate(180deg); 
+}
+
+.dropdown-menu {
+  position: absolute;
+  width: 170px;
+  background-color: white;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  z-index: 2000; /* Aseguramos que las listas estén por encima */
+}
+
+.tiempo-ordinario + .dropdown-menu {
+  top: 105px;
+  left: 35px;
+}
+
+.cantos-entrada + .dropdown-menu {
+  top: 105px;
+  left: 220px;
+}
+.dropdown-item {
+  padding: 10px;
+  cursor: pointer;
+  color: black;
+  font-family: "Poppins", Helvetica;
+  font-size: 14px;
+  border-bottom: 1px solid #eee;
+}
+.dropdown-item:hover {
+  background-color: #f0f8ff;
+}
+
+.vertical-container {
+  z-index: 1500; /* El contenedor horizontal debajo de las listas pero arriba del resto */
 }
