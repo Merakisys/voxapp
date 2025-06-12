@@ -43,19 +43,19 @@ export class LiturgyPage {
   // segundo carrusel 
   slidesEventos = [
     {
-      image: 'assets/images/img1.jpg',
+      image: 'assets/images/alabare.jpg',
       title: 'Santo',
       },
     {
-      image: 'assets/images/img2.jpg',
+      image: 'assets/images/cruz.jpg',
       title: 'Alabaré a Mi Señor',
      },
     {
-      image: 'assets/images/img3.jpg',
+      image: 'assets/images/libro.jpg',
       title: 'Hoy el Señor resucitó',
        },
     {
-      image: 'assets/images/img4.jpg',
+      image: 'assets/images/si.jpg',
       title: 'Alabaré',
   }
   ];
