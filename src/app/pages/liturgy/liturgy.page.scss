@@ -4,6 +4,7 @@
   overflow-y: auto;
 }
 
+/* Espaciado entre secciones */
 .carousel-section {
   margin-bottom: 25px;
 
@@ -12,6 +13,7 @@
   }
 }
 
+/* Títulos de sección */
 .carousel-title {
   text-align: left;
   color: #1A3C5E;
@@ -22,6 +24,7 @@
   font-family: 'Poppins', sans-serif;
 }
 
+/* Swiper general */
 .overlay-swiper {
   width: 100%;
   height: auto;
@@ -41,6 +44,7 @@
   }
 }
 
+/* Tarjeta individual */
 .slide-wrapper {
   width: 100%;
   height: 120px;
@@ -55,6 +59,7 @@
   }
 }
 
+/* Imagen con overlay */
 .image-container {
   position: relative;
   width: 100%;
@@ -82,6 +87,7 @@
     z-index: 1;
   }
 
+  /* Texto encima de la imagen */
   .text-overlay {
     position: absolute;
     bottom: 0;
@@ -104,10 +110,10 @@
       font-size: 0.85em;
       margin: 0 0 10px 0;
       font-weight: 400;
-      color: white;
+      color: white; // ✅ CAMBIO hecho aquí
       font-family: 'Poppins', sans-serif;
       line-height: 0.4;
-      text-shadow: none;
+      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
     }
   }
 }
@@ -132,7 +138,7 @@ swiper-container::part(pagination-bullet-active) {
   transform: scale(1.2);
 }
 
-/* Swiper arrows (opcional) */
+/* Swiper arrows (por si los activas en el futuro) */
 swiper-container::part(button-next),
 swiper-container::part(button-prev) {
   color: white;
@@ -148,7 +154,7 @@ swiper-container::part(button-prev) {
   }
 }
 
-/* Responsive */
+/* Responsive mobile */
 @media (max-width: 768px) {
   .carousel-title {
     font-size: 1.1em !important;
@@ -177,6 +183,7 @@ swiper-container::part(button-prev) {
   }
 }
 
+/* Pantallas bajas (horizontal tablets) */
 @media (max-height: 700px) {
   .carousel-section {
     margin-bottom: 20px;
