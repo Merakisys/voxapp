@@ -1,0 +1,10 @@
+:root {
+  --variable-collection-azul-oscuro: rgba(26, 60, 94, 1);
+  --variable-collection-azul-claro: rgba(74, 144, 226, 1);
+  --variable-collection-rojo-oscuro: var(--variable-collection-azul-claro);
+  --variable-collection-rojo: rgba(169, 68, 66, 1);
+  --variable-collection-blanco: rgba(255, 255, 255, 1);
+  --variable-collection-azul: rgba(61, 111, 162, 1);
+  --variable-collection-plomo: rgba(134, 147, 156, 1);
+}
+

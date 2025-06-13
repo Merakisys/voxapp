@@ -4,8 +4,12 @@ import { TabsPage } from './tabs/tabs.page';
 export const routes: Routes = [
   {
     path: '',
-    redirectTo: '/tabs/home',
+    redirectTo: 'splash/pantalla1',
     pathMatch: 'full',
+  },
+  {
+    path: 'splash',
+    loadChildren: () => import('./splash/splash.routes').then((m) => m.default),
   },
   {
     path: 'tabs',
