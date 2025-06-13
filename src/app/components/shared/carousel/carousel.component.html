@@ -1,0 +1,46 @@
+<!-- src/app/components/shared/carousel/carousel.component.html -->
+<div class="carousel-container">
+  <!-- Botón anterior -->
+  @if (items.length > 1) {
+    <ion-button 
+      fill="clear" 
+      class="nav-button prev-button" 
+      (click)="prevSlide()">
+      <ion-icon name="chevron-back-outline"></ion-icon>
+    </ion-button>
+  }
+
+  <!-- Contenedor del carrusel -->
+  <div class="carousel-wrapper">
+    <div 
+      class="carousel-track" 
+      [style.transform]="'translateX(-' + (currentIndex * getSlideWidth()) + 'px)'">
+      @for (item of items; track item.id) {
+        <app-card [item]="item"></app-card>
+      }
+    </div>
+  </div>
+
+  <!-- Botón siguiente -->
+  @if (items.length > 1) {
+    <ion-button 
+      fill="clear" 
+      class="nav-button next-button" 
+      (click)="nextSlide()">
+      <ion-icon name="chevron-forward-outline"></ion-icon>
+    </ion-button>
+  }
+</div>
+
+<!-- Indicadores -->
+@if (items.length > 1) {
+  <div class="indicators">
+    @for (item of items; track item.id; let i = $index) {
+      <button 
+        class="indicator" 
+        [class.active]="i === currentIndex"
+        (click)="goToSlide(i)">
+      </button>
+    }
+  </div>
+}

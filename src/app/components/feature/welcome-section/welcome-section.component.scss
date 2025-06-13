@@ -1,0 +1,67 @@
+// src/app/components/feature/welcome-section/welcome-section.component.scss
+.welcome-section {
+  padding: 20px 16px;
+  background: white; // Fondo blanco simple sin gradiente
+  min-height: 400px;
+}
+
+.welcome-header {
+  margin-bottom: 24px;
+  text-align: left;
+}
+
+.welcome-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #000000; // Color negro sólido
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 8px; // Espacio entre el texto y el emoji
+}
+
+.welcome-subtitle {
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: #666666;
+  margin: 8px 0 0 0;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.welcome-emoji {
+  font-size: 2rem;
+  color: #FFD700; // Color dorado para el emoji para que destaque
+}
+
+.welcome-subtitle .welcome-emoji {
+  font-size: 1.2rem; // Emoji más pequeño para el subtítulo
+}
+
+.carousel-container {
+  margin-top: 20px;
+}
+
+// Responsive
+@media (max-width: 768px) {
+  .welcome-section {
+    padding: 16px 12px;
+  }
+  
+  .welcome-title {
+    font-size: 1.6rem;
+  }
+  
+  .welcome-subtitle {
+    font-size: 1rem;
+  }
+  
+  .welcome-emoji {
+    font-size: 1.6rem;
+  }
+  
+  .welcome-subtitle .welcome-emoji {
+    font-size: 1rem;
+  }
+}

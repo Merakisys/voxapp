@@ -1,0 +1,133 @@
+// src/app/components/shared/carousel/carousel.component.scss
+.carousel-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  overflow: hidden;
+  padding: 10px 0;
+}
+
+.carousel-wrapper {
+  flex: 1;
+  overflow: hidden;
+  margin: 0 20px;
+  border-radius: 15px;
+}
+
+.carousel-track {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+  gap: 12px;
+}
+
+.nav-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+  color: white;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  width: 45px;
+  height: 45px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  
+  &:hover {
+    background: rgba(255, 255, 255, 0.3);
+  }
+  
+  ion-icon {
+    font-size: 24px;
+    color: white;
+  }
+}
+
+.prev-button {
+  left: -10px;
+}
+
+.next-button {
+  right: -10px;
+}
+
+.indicators {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 15px;
+  
+  .indicator {
+    background: rgba(255, 255, 255, 0.5);
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    opacity: 0.7;
+    transition: all 0.3s ease;
+    
+    &.active {
+      background: white;
+      opacity: 1;
+      transform: scale(1.2);
+    }
+    
+    &:hover {
+      opacity: 0.9;
+    }
+  }
+}
+
+// Responsive
+@media (max-width: 768px) {
+  .carousel-wrapper {
+    margin: 0 15px;
+  }
+  
+  .carousel-track {
+    gap: 8px;
+  }
+  
+  .nav-button {
+    width: 40px;
+    height: 40px;
+    
+    ion-icon {
+      font-size: 20px;
+    }
+  }
+  
+  .prev-button {
+    left: -5px;
+  }
+  
+  .next-button {
+    right: -5px;
+  }
+
+  .indicators {
+    margin-top: 12px;
+    
+    .indicator {
+      width: 8px;
+      height: 8px;
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .carousel-wrapper {
+    margin: 0 10px;
+  }
+  
+  .nav-button {
+    width: 35px;
+    height: 35px;
+    
+    ion-icon {
+      font-size: 18px;
+    }
+  }
+}
