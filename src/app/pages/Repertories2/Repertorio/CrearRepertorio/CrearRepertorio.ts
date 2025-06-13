@@ -6,7 +6,10 @@ import { FormsModule } from '@angular/forms';
 import { ContainerVerticalComponent } from 'src/app/components/containers/Container Vertical/containerVertical';
 import { ContainerHorizontalComponent } from 'src/app/components/containers/Container Horizontal/containerHorizontal';
 import { TiempoLiturgicoService } from 'src/app/services/tiempo-liturgico.service';
-import { RepertorioService, RepertorioDetalle } from 'src/app/services/repertorio.service';
+import {
+  RepertorioService,
+  RepertorioDetalle,
+} from 'src/app/services/repertorio.service';
 
 /** Utilidades de fecha ---------------------------------------------- */
 const MS_PER_DAY = 86_400_000;
@@ -22,7 +25,9 @@ function addDays(d: Date, days: number): Date {
 /** Algoritmo gregoriano anónimo para la Pascua */
 function getEasterSunday(year: number): Date {
   if (year < 1583) {
-    throw new Error('El cálculo de Pascua solo es válido para años posteriores a 1582 (calendario gregoriano)');
+    throw new Error(
+      'El cálculo de Pascua solo es válido para años posteriores a 1582 (calendario gregoriano)'
+    );
   }
   const a = year % 19;
   const b = Math.floor(year / 100);
@@ -48,7 +53,9 @@ function getFirstAdventSunday(year: number): Date {
   const daysUntilSunday = (7 - dayOfWeek) % 7; // Días hasta el próximo domingo
   const firstAdvent = addDays(nov27, daysUntilSunday);
   if (firstAdvent.getMonth() === 11 && firstAdvent.getDate() > 3) {
-    throw new Error('El primer domingo de Adviento debe estar entre 27-nov y 3-dic');
+    throw new Error(
+      'El primer domingo de Adviento debe estar entre 27-nov y 3-dic'
+    );
   }
   return firstAdvent;
 }
@@ -83,11 +90,11 @@ function getBaptismOfTheLord(year: number): Date {
     IonicModule,
     FormsModule,
     ContainerVerticalComponent,
-    ContainerHorizontalComponent
+    ContainerHorizontalComponent,
   ],
   providers: [CrearRepertorioPage], // Añadir esto
   templateUrl: './CrearRepertorio.html',
-  styleUrls: ['./style.css', './styleguide.css', './globals.css']
+  styleUrls: ['./style.css', './styleguide.css', './globals.css'],
 })
 export class CrearRepertorioPage implements OnInit {
   /* ---------------- Propiedades de UI ---------------- */
@@ -104,48 +111,155 @@ export class CrearRepertorioPage implements OnInit {
 
   /* ---------------- Datos base ----------------------- */
   readonly tiemposLiturgicos: string[] = [
-    'Adviento', 'Navidad', 'Cuaresma', 'Domingo de Ramos', 'Jueves Santo',
-    'La Resurrección del Señor', 'Pascua', 'Pentecostés',
-    'Tiempo Ordinario', 'Cristo Rey', 'Fiestas de Precepto'
+    'Adviento',
+    'Navidad',
+    'Cuaresma',
+    'Domingo de Ramos',
+    'Jueves Santo',
+    'La Resurrección del Señor',
+    'Pascua',
+    'Pentecostés',
+    'Tiempo Ordinario',
+    'Cristo Rey',
+    'Fiestas de Precepto',
   ];
 
   readonly cantosPorTiempo: { [tiempo: string]: string[] } = {
-    'Adviento': ['Entrada', 'Piedad', 'Aleluya', 'Ofertorio', 'Santo', 'Cordero de Dios', 'Comunión', 'Salida'],
-    'Navidad': ['Entrada', 'Piedad', 'Gloria', 'Aleluya', 'Ofertorio', 'Santo', 'Cordero de Dios', 'Comunión', 'Salida'],
-    'Cuaresma': ['Entrada', 'Piedad', 'Honor y gloria a ti Señor Jesús', 'Ofertorio', 'Santo', 'Cordero de Dios', 'Comunión', 'Salida'],
-    'Domingo de Ramos': ['Entrada', 'Canto para bendición de los ramos', 'Ofertorio', 'Santo', 'Cordero de Dios', 'Comunión', 'Salida'],
+    Adviento: [
+      'Entrada',
+      'Piedad',
+      'Aleluya',
+      'Ofertorio',
+      'Santo',
+      'Cordero de Dios',
+      'Comunión',
+      'Salida',
+    ],
+    Navidad: [
+      'Entrada',
+      'Piedad',
+      'Gloria',
+      'Aleluya',
+      'Ofertorio',
+      'Santo',
+      'Cordero de Dios',
+      'Comunión',
+      'Salida',
+    ],
+    Cuaresma: [
+      'Entrada',
+      'Piedad',
+      'Honor y gloria a ti Señor Jesús',
+      'Ofertorio',
+      'Santo',
+      'Cordero de Dios',
+      'Comunión',
+      'Salida',
+    ],
+    'Domingo de Ramos': [
+      'Entrada',
+      'Canto para bendición de los ramos',
+      'Ofertorio',
+      'Santo',
+      'Cordero de Dios',
+      'Comunión',
+      'Salida',
+    ],
     'Jueves Santo': [
-      'Entrada', 'Piedad', 'Gloria', 'Honor y gloria',
+      'Entrada',
+      'Piedad',
+      'Gloria',
+      'Honor y gloria',
       'Canto para el lavatorio de pies',
-      'Ofertorio', 'Santo', 'Cordero de Dios', 'Comunión',
-      'Canto para repartir el pan bendito', 'Salida'
+      'Ofertorio',
+      'Santo',
+      'Cordero de Dios',
+      'Comunión',
+      'Canto para repartir el pan bendito',
+      'Salida',
     ],
     'La Resurrección del Señor': [
-      'Pregón pascual', '7 salmos', 'Gloria', 'Aleluya',
+      'Pregón pascual',
+      '7 salmos',
+      'Gloria',
+      'Aleluya',
       'Bendición y aspersión del agua bendita',
-      'Ofertorio', 'Santo', 'Cordero de Dios', 'Comunión', 'Salida'
+      'Ofertorio',
+      'Santo',
+      'Cordero de Dios',
+      'Comunión',
+      'Salida',
     ],
-    'Pascua': [
-      'Entrada', 'Bendición y aspersión del agua bendita o piedad',
-      'Gloria', 'Aleluya', 'Ofertorio', 'Santo', 'Cordero de Dios', 'Comunión', 'Salida'
+    Pascua: [
+      'Entrada',
+      'Bendición y aspersión del agua bendita o piedad',
+      'Gloria',
+      'Aleluya',
+      'Ofertorio',
+      'Santo',
+      'Cordero de Dios',
+      'Comunión',
+      'Salida',
     ],
-    'Pentecostés': ['Entrada', 'Piedad', 'Gloria', 'Aleluya', 'Ofertorio', 'Santo', 'Cordero de Dios', 'Comunión', 'Salida'],
-    'Tiempo Ordinario': ['Entrada', 'Piedad', 'Gloria', 'Aleluya', 'Ofertorio', 'Santo', 'Cordero de Dios', 'Comunión', 'Salida'],
-    'Cristo Rey': ['Entrada', 'Piedad', 'Gloria', 'Aleluya', 'Ofertorio', 'Santo', 'Cordero de Dios', 'Comunión', 'Salida'],
-    'Fiestas de Precepto': ['Entrada', 'Piedad', 'Gloria', 'Aleluya', 'Ofertorio', 'Santo', 'Cordero de Dios', 'Comunión', 'Salida']
+    Pentecostés: [
+      'Entrada',
+      'Piedad',
+      'Gloria',
+      'Aleluya',
+      'Ofertorio',
+      'Santo',
+      'Cordero de Dios',
+      'Comunión',
+      'Salida',
+    ],
+    'Tiempo Ordinario': [
+      'Entrada',
+      'Piedad',
+      'Gloria',
+      'Aleluya',
+      'Ofertorio',
+      'Santo',
+      'Cordero de Dios',
+      'Comunión',
+      'Salida',
+    ],
+    'Cristo Rey': [
+      'Entrada',
+      'Piedad',
+      'Gloria',
+      'Aleluya',
+      'Ofertorio',
+      'Santo',
+      'Cordero de Dios',
+      'Comunión',
+      'Salida',
+    ],
+    'Fiestas de Precepto': [
+      'Entrada',
+      'Piedad',
+      'Gloria',
+      'Aleluya',
+      'Ofertorio',
+      'Santo',
+      'Cordero de Dios',
+      'Comunión',
+      'Salida',
+    ],
   };
 
   constructor(
     private router: Router,
     private tiempoLiturgicoService: TiempoLiturgicoService,
-    private repertorioService: RepertorioService  // Añadir esta línea
-  ) { }
+    private repertorioService: RepertorioService // Añadir esta línea
+  ) {}
 
   /* ---------------- Ciclo de vida -------------------- */
   ngOnInit(): void {
     const hoy = new Date();
-    this.seleccionadoTiempo = this.tiempoLiturgicoService.detectarTiempoLiturgico(hoy);
-    this.cantosParaMostrar = this.cantosPorTiempo[this.seleccionadoTiempo] || [];
+    this.seleccionadoTiempo =
+      this.tiempoLiturgicoService.detectarTiempoLiturgico(hoy);
+    this.cantosParaMostrar =
+      this.cantosPorTiempo[this.seleccionadoTiempo] || [];
   }
 
   /* ---------------- Lógica de tiempo litúrgico ------- */
@@ -188,9 +302,9 @@ export class CrearRepertorioPage implements OnInit {
       { mes: 10, dia: 1 }, // Todos los Santos
       { mes: 11, dia: 8 }, // Inmaculada Concepción
       { mes: ascension.getMonth(), dia: ascension.getDate() }, // Ascensión
-      { mes: corpusChristi.getMonth(), dia: corpusChristi.getDate() } // Corpus Christi
+      { mes: corpusChristi.getMonth(), dia: corpusChristi.getDate() }, // Corpus Christi
     ];
-    if (fiestasDePrecepto.some(f => mes === f.mes && dia === f.dia)) {
+    if (fiestasDePrecepto.some((f) => mes === f.mes && dia === f.dia)) {
       return 'Fiestas de Precepto';
     }
 
@@ -207,21 +321,28 @@ export class CrearRepertorioPage implements OnInit {
     if (fecha >= easterMonday && fecha < pentecost) return 'Pascua';
 
     /* 7- Tiempo Ordinario (dos bloques: después de Bautismo hasta Miércoles de Ceniza, y después de Pentecostés hasta Adviento) */
-    if ((fecha > baptism && fecha < ashWednesday) || (fecha > pentecost && fecha < adventNext)) {
+    if (
+      (fecha > baptism && fecha < ashWednesday) ||
+      (fecha > pentecost && fecha < adventNext)
+    ) {
       return 'Tiempo Ordinario';
     }
 
     /* Si no se encuentra un tiempo litúrgico, lanzar error para depuración */
-    throw new Error('No se pudo determinar el tiempo litúrgico para la fecha proporcionada');
+    throw new Error(
+      'No se pudo determinar el tiempo litúrgico para la fecha proporcionada'
+    );
   }
 
   private isSameDay(a: Date, b: Date): boolean {
     if (!a || !b || isNaN(a.getTime()) || isNaN(b.getTime())) {
       throw new Error('Fechas inválidas para comparación');
     }
-    return a.getFullYear() === b.getFullYear() &&
+    return (
+      a.getFullYear() === b.getFullYear() &&
       a.getMonth() === b.getMonth() &&
-      a.getDate() === b.getDate();
+      a.getDate() === b.getDate()
+    );
   }
 
   /* ---------------- Métodos de UI -------------------- */
@@ -252,8 +373,10 @@ export class CrearRepertorioPage implements OnInit {
 
   hasItems: boolean = false;
 
-  @ViewChild(ContainerHorizontalComponent) horizontalContainer!: ContainerHorizontalComponent;
-  @ViewChild(ContainerVerticalComponent) verticalContainer!: ContainerVerticalComponent;
+  @ViewChild(ContainerHorizontalComponent)
+  horizontalContainer!: ContainerHorizontalComponent;
+  @ViewChild(ContainerVerticalComponent)
+  verticalContainer!: ContainerVerticalComponent;
 
   // Agregar la propiedad selectedSong
   selectedSong?: {
@@ -267,10 +390,10 @@ export class CrearRepertorioPage implements OnInit {
   onItemToggled(event: any) {
     this.mostrarContainer = true;
     this.selectedSong = event.cancion;
-    
+
     this.containerPosition = {
       top: '493px',
-      left: '24px'
+      left: '24px',
     };
 
     // Verificar items después de agregar uno nuevo
@@ -280,7 +403,7 @@ export class CrearRepertorioPage implements OnInit {
   onItemRemoved(subtitle: string) {
     if (this.verticalContainer) {
       this.verticalContainer.unselectItem(subtitle);
-      
+
       // Verificar items después de remover uno
       setTimeout(() => {
         if (this.horizontalContainer) {
@@ -322,27 +445,29 @@ export class CrearRepertorioPage implements OnInit {
     const nuevoRepertorio: RepertorioDetalle = {
       nombre: this.nombreRepertorio,
       tiempoLiturgico: this.seleccionadoTiempo,
-      canciones: this.horizontalContainer.items.map(item => ({
+      canciones: this.horizontalContainer.items.map((item) => ({
         nombre: item.subtitle,
         tipo: item.name,
         descripcion: item.description,
-        imageUrl: item.imageUrl
-      }))
+        imageUrl: item.imageUrl,
+      })),
     };
 
     // Guardar en el servicio
     this.repertorioService.guardarRepertorio(nuevoRepertorio);
 
-    this.router.navigate(['/repertories2/repertorio'], {
-      queryParams: {
-        nuevoRepertorio: this.nombreRepertorio,
-        tiempoLiturgico: this.seleccionadoTiempo
-      }
-    }).then(() => {
-      this.limpiarFormulario();
-      if (this.verticalContainer) {
-        this.verticalContainer.ngOnInit();
-      }
-    });
+    this.router
+      .navigate(['/repertories2/repertorio'], {
+        queryParams: {
+          nuevoRepertorio: this.nombreRepertorio,
+          tiempoLiturgico: this.seleccionadoTiempo,
+        },
+      })
+      .then(() => {
+        this.limpiarFormulario();
+        if (this.verticalContainer) {
+          this.verticalContainer.ngOnInit();
+        }
+      });
   }
 }

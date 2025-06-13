@@ -4,16 +4,20 @@ import { CrearRepertorioPage } from './Repertorio/CrearRepertorio/CrearRepertori
 import { ListaRepertorioPage } from './Repertorio/ListaRepertorio/ListaRepertorio';
 export const routes: Routes = [
   {
-    path: 'repertorio',
-     component: RepertorioPage
+    path: '',
+    redirectTo: 'repertorio',
+    pathMatch: 'full',
   },
-   {
+  {
+    path: 'repertorio',
+    component: RepertorioPage,
+  },
+  {
     path: 'repertorio/crear',
-     component: CrearRepertorioPage,
-   },
-   {
-     path: 'repertorio/lista',
-     component: ListaRepertorioPage,
-   },
-   
+    component: CrearRepertorioPage,
+  },
+  {
+    path: 'repertorio/lista',
+    component: ListaRepertorioPage,
+  },
 ];

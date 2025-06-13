@@ -10,6 +10,7 @@ import {
 import { CommonModule } from '@angular/common';
 import { addIcons } from 'ionicons';
 import { triangle, ellipse, square, add } from 'ionicons/icons';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-tabs',
@@ -29,7 +30,11 @@ import { triangle, ellipse, square, add } from 'ionicons/icons';
 export class TabsPage {
   public environmentInjector = inject(EnvironmentInjector);
 
-  constructor() {
+  constructor(private router: Router) {
     addIcons({ triangle, ellipse, square, add });
+  }
+
+  goToRepertories2() {
+    this.router.navigate(['/tabs/repertories2']);
   }
 }

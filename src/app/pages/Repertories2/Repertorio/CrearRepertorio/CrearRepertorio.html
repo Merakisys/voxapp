@@ -1,85 +1,131 @@
 <!DOCTYPE html>
 <html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="globals.css" />
+    <link rel="stylesheet" href="styleguide.css" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
 
-<head>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta charset="utf-8" />
-  <link rel="stylesheet" href="globals.css" />
-  <link rel="stylesheet" href="styleguide.css" />
-  <link rel="stylesheet" href="style.css" />
-</head>
-
-<body>
-  <div class="crear-repertorio-m">
-    <div class="scroll-wrapper">
-      <div class="div">
-        <div class="overlap">
-          <app-container-vertical
-            [tiempoSeleccionado]="seleccionadoTiempo"
-            [tipoCantoSeleccionado]="seleccionadoEntrada"
-            (itemToggled)="onItemToggled($event)">
-          </app-container-vertical>
-          <app-container-horizontal
-            *ngIf="mostrarContainer"
-            [isVisible]="mostrarContainer"
-            [selectedSong]="selectedSong"
-            [ngStyle]="containerPosition"
-            (itemRemoved)="onItemRemoved($event)">
-          </app-container-horizontal>
-        </div>
-        <div class="overlap-2">
-          <div class="rectangle-2">
-            <input type="text" class="text-wrapper-4" placeholder="Nombre del Repertorio"
-              [(ngModel)]="nombreRepertorio">
+  <body>
+    <div class="crear-repertorio-m">
+      <div class="scroll-wrapper">
+        <div class="div">
+          <div class="overlap">
+            <app-container-vertical
+              [tiempoSeleccionado]="seleccionadoTiempo"
+              [tipoCantoSeleccionado]="seleccionadoEntrada"
+              (itemToggled)="onItemToggled($event)"
+            >
+            </app-container-vertical>
+            <app-container-horizontal
+              *ngIf="mostrarContainer"
+              [isVisible]="mostrarContainer"
+              [selectedSong]="selectedSong"
+              [ngStyle]="containerPosition"
+              (itemRemoved)="onItemRemoved($event)"
+            >
+            </app-container-horizontal>
           </div>
+          <div class="overlap-2">
+            <div class="rectangle-2">
+              <input
+                type="text"
+                class="text-wrapper-4"
+                placeholder="Nombre del Repertorio"
+                [(ngModel)]="nombreRepertorio"
+              />
+            </div>
 
-          <!-- Primer dropdown -->
-          <div class="dropdown-container">
-            <button class="category-button tiempo-ordinario" (click)="toggleTiempo()">
-              {{ seleccionadoTiempo }}
-              <img class="sort-down" [class.rotated]="mostrarTiempo"
-                src="https://c.animaapp.com/mbgnucpryW9snS/img/sort-down.png" />
-            </button>
-            <div class="dropdown-menu" *ngIf="mostrarTiempo">
-              <div class="dropdown-item" *ngFor="let tiempo of tiemposLiturgicos" (click)="seleccionarTiempo(tiempo)">
-                {{ tiempo }}
+            <!-- Primer dropdown -->
+            <div class="dropdown-container">
+              <button
+                class="category-button tiempo-ordinario"
+                (click)="toggleTiempo()"
+              >
+                {{ seleccionadoTiempo }}
+                <img
+                  class="sort-down"
+                  [class.rotated]="mostrarTiempo"
+                  src="https://c.animaapp.com/mbgnucpryW9snS/img/sort-down.png"
+                />
+              </button>
+              <div class="dropdown-menu" *ngIf="mostrarTiempo">
+                <div
+                  class="dropdown-item"
+                  *ngFor="let tiempo of tiemposLiturgicos"
+                  (click)="seleccionarTiempo(tiempo)"
+                >
+                  {{ tiempo }}
+                </div>
+              </div>
+            </div>
+
+            <!-- Segundo dropdown -->
+            <div class="dropdown-container">
+              <button
+                class="category-button cantos-entrada"
+                (click)="toggleEntrada()"
+              >
+                {{ seleccionadoEntrada }}
+                <img
+                  class="sort-down"
+                  [class.rotated]="mostrarEntrada"
+                  src="https://c.animaapp.com/mbgnucpryW9snS/img/sort-down.png"
+                />
+              </button>
+              <div class="dropdown-menu" *ngIf="mostrarEntrada">
+                <div
+                  class="dropdown-item"
+                  *ngFor="let canto of cantosParaMostrar"
+                  (click)="seleccionarEntrada(canto)"
+                >
+                  {{ canto }}
+                </div>
               </div>
             </div>
           </div>
 
-          <!-- Segundo dropdown -->
-          <div class="dropdown-container">
-            <button class="category-button cantos-entrada" (click)="toggleEntrada()">
-              {{ seleccionadoEntrada }}
-              <img class="sort-down" [class.rotated]="mostrarEntrada"
-                src="https://c.animaapp.com/mbgnucpryW9snS/img/sort-down.png" />
-            </button>
-            <div class="dropdown-menu" *ngIf="mostrarEntrada">
-              <div class="dropdown-item" *ngFor="let canto of cantosParaMostrar" (click)="seleccionarEntrada(canto)">
-                {{ canto }}
-              </div>
-            </div>
+          <!-- Botón volver -->
+          <div class="group-3" (click)="volverARepertorio()">
+            <img
+              class="nuevo-repertorio"
+              src="https://c.animaapp.com/mbgnucpryW9snS/img/nuevo-repertorio.png"
+            />
+            <svg
+              class="ic-baseline-less"
+              xmlns="http://www.w3.org/2000/svg"
+              width="30"
+              height="30"
+              viewBox="0 0 24 24"
+            >
+              <path
+                fill="#3D6FA2"
+                d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"
+              />
+            </svg>
+          </div>
+
+          <!-- Botón añadir repertorio -->
+          <div
+            class="overlap-3"
+            [class.disabled]="!hasItems"
+            [style.pointer-events]="hasItems ? 'auto' : 'none'"
+            (click)="anadirRepertorio()"
+          >
+            <div
+              class="rectangle-3"
+              [style.opacity]="hasItems ? '1' : '0.5'"
+            ></div>
+            <img
+              class="aadir-repertorio"
+              [style.opacity]="hasItems ? '1' : '0.5'"
+              src="https://c.animaapp.com/mbgnucpryW9snS/img/a-adir-repertorio.png"
+            />
           </div>
         </div>
-
-        <!-- Botón volver -->
-        <div class="group-3" (click)="volverARepertorio()">
-          <img class="nuevo-repertorio" src="https://c.animaapp.com/mbgnucpryW9snS/img/nuevo-repertorio.png" />
-          <svg class="ic-baseline-less" xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24">
-            <path fill="#3D6FA2" d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z" />
-          </svg>
-        </div>
-
-        <!-- Botón añadir repertorio -->
-        <div class="overlap-3" [class.disabled]="!hasItems" [style.pointer-events]="hasItems ? 'auto' : 'none'" (click)="anadirRepertorio()">
-          <div class="rectangle-3" [style.opacity]="hasItems ? '1' : '0.5'"></div>
-          <img class="aadir-repertorio" [style.opacity]="hasItems ? '1' : '0.5'" src="https://c.animaapp.com/mbgnucpryW9snS/img/a-adir-repertorio.png" />
-        </div>
-
-        
       </div>
     </div>
-  </div>
-</body>
-
+  </body>
 </html>

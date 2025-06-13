@@ -8,10 +8,6 @@ export const routes: Routes = [
     pathMatch: 'full',
   },
   {
-    path: 'repertories2',
-    loadChildren: () => import('./pages/Repertories2/repertories.routes').then((m) => m.routes),
-  },
-  {
     path: 'splash',
     loadChildren: () => import('./splash/splash.routes').then((m) => m.default),
   },
@@ -30,14 +26,13 @@ export const routes: Routes = [
           import('./pages/liturgy/liturgy.page').then((m) => m.LiturgyPage),
       },
       {
-        path: 'repertories',
-        loadComponent: () =>
-          import('./pages/repertories/repertories.page').then(
-            (m) => m.RepertoriesPage
+        path: 'repertories2',
+        loadChildren: () =>
+          import('./pages/Repertories2/repertories.routes').then(
+            (m) => m.routes
           ),
       },
-      
-      
+
       {
         path: '',
         redirectTo: '/tabs/home',
