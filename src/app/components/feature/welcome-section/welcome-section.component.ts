@@ -44,6 +44,36 @@ export class WelcomeSectionComponent implements OnInit {
         title: 'A los pies del Rey',
         subtitle: 'Jose Luis Melgar',
         image: 'assets/images/a_los_pies_del_Rey.jpg'
+      },
+      {
+        id: '5',
+        title: 'A los pies del Rey',
+        subtitle: 'Jose Luis Melgar',
+        image: 'assets/images/a_los_pies_del_Rey.jpg'
+      },
+      {
+        id: '5',
+        title: 'A los pies del Rey',
+        subtitle: 'Jose Luis Melgar',
+        image: 'assets/images/a_los_pies_del_Rey.jpg'
+      },
+      {
+        id: '5',
+        title: 'A los pies del Rey',
+        subtitle: 'Jose Luis Melgar',
+        image: 'assets/images/a_los_pies_del_Rey.jpg'
+      },
+      {
+        id: '5',
+        title: 'A los pies del Rey',
+        subtitle: 'Jose Luis Melgar',
+        image: 'assets/images/a_los_pies_del_Rey.jpg'
+      },
+      {
+        id: '5',
+        title: 'A los pies del Rey',
+        subtitle: 'Jose Luis Melgar',
+        image: 'assets/images/a_los_pies_del_Rey.jpg'
       }
     ];
   }
