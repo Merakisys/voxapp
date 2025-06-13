@@ -10,60 +10,76 @@
   padding: 10px;
   overflow-y: auto;
 }
+
+/* Espaciado entre secciones */
 .carousel-section {
   margin-bottom: 25px;
- 
+
   &:last-child {
     margin-bottom: 10px;
   }
 }
+
+/* Títulos de sección */
 .carousel-title {
   text-align: left;
+  color: #1a3c5e;
   color: #1a3c5e;
   margin: 0 0 15px 0;
   font-size: 1.2em;
   font-weight: 600;
   padding: 0 10px;
+  font-family: "Poppins", sans-serif;
 }
+
+/* Swiper general */
 .overlay-swiper {
   width: 100%;
   height: auto;
   border-radius: 15px;
   overflow: hidden;
-  padding-bottom: 40px; 
-  &.first-carousel {
-    // Autoplay
+  padding-bottom: 40px;
+
+  &.first-carousel,
+  &.second-carousel,
+  &.third-carousel,
+  &.fourth-carousel {
     --swiper-autoplay-delay: 4000ms;
   }
- 
-  &.second-carousel {
-    // Autoplay
-    --swiper-autoplay-delay: 4000ms;
-  }
- 
+
   swiper-slide {
     border-radius: 15px;
   }
 }
+
+/* Tarjeta individual */
 .slide-wrapper {
   width: 100%;
   height: 120px;
   border-radius: 15px;
   overflow: hidden;
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease;
+
+  &:hover .text-overlay {
+    transform: translateY(-5px);
+    transition: transform 0.3s ease;
+  }
 }
+
+/* Imagen con overlay */
 .image-container {
   position: relative;
   width: 100%;
   height: 100%;
- 
+
   img {
     width: 100%;
     height: 100%;
     object-fit: cover;
     display: block;
   }
- 
+
   .overlay-gradient {
     position: absolute;
     top: 0;
@@ -78,38 +94,59 @@
     );
     z-index: 1;
   }
- 
-  // Contenedor del texto superpuesto
+
+  /* Texto encima de la imagen */
   .text-overlay {
     position: absolute;
     bottom: 0;
     left: 0;
     right: 0;
     padding: 30px 25px;
-    color: white;
     z-index: 2;
-   
+
     .main-title {
       font-size: 1.4em;
       font-weight: 700;
       margin: 0 0 8px 0;
+      color: white;
       text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
       line-height: 0.6;
+      font-family: "Poppins", sans-serif;
     }
-   
+
     .subtitle {
       font-size: 0.85em;
       margin: 0 0 10px 0;
-      opacity: 0.9;
-      font-weight: 500;
+      font-weight: 400;
+      color: white; // ✅ CAMBIO hecho aquí
+      font-family: "Poppins", sans-serif;
       line-height: 0.4;
       text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
     }
-   
-   
   }
 }
-// Controles de navegación personalizados
+
+/* Swiper bullets */
+swiper-container::part(pagination) {
+  position: static;
+  margin-top: 15px;
+}
+
+swiper-container::part(pagination-bullet) {
+  background: rgba(255, 255, 255, 0.5);
+  width: 10px;
+  height: 10px;
+  opacity: 0.7;
+  transition: all 0.3s ease;
+}
+
+swiper-container::part(pagination-bullet-active) {
+  background: white;
+  opacity: 1;
+  transform: scale(1.2);
+}
+
+/* Swiper arrows (por si los activas en el futuro) */
 swiper-container::part(button-next),
 swiper-container::part(button-prev) {
   color: white;
@@ -119,73 +156,48 @@ swiper-container::part(button-prev) {
   height: 45px;
   backdrop-filter: blur(10px);
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
- 
+
   &:hover {
     background: rgba(255, 255, 255, 0.3);
   }
 }
-swiper-container::part(pagination) {
-  position: static;
-  margin-top: 15px;
-}
-swiper-container::part(pagination-bullet) {
-  background: rgba(255, 255, 255, 0.5);
-  width: 10px;
-  height: 10px;
-  opacity: 0.7;
-}
-swiper-container::part(pagination-bullet-active) {
-  background: white;
-  opacity: 1;
-  transform: scale(1.2);
-}
-// Responsive design
+
+/* Responsive mobile */
 @media (max-width: 768px) {
   .carousel-title {
     font-size: 1.1em !important;
     margin-bottom: 12px !important;
   }
- 
+
   .overlay-swiper {
     height: auto !important;
-    padding-bottom: 35px !important; 
+    padding-bottom: 35px !important;
   }
- 
+
   .carousel-section {
     margin-bottom: 0% !important;
   }
- 
+
   .text-overlay {
     padding: 15px 15px !important;
-   
+
     .main-title {
-      font-size: 0.80em !important;
+      font-size: 0.8em !important;
     }
-   
+
     .subtitle {
       font-size: 0.75em !important;
     }
-   
   }
 }
-// Espaciado entre carruseles
+
+/* Pantallas bajas (horizontal tablets) */
 @media (max-height: 700px) {
   .carousel-section {
     margin-bottom: 20px;
   }
- 
+
   .overlay-swiper {
     height: auto;
-  }
-}
-// Animación suave al cambiar slides
-.slide-wrapper {
-  transition: transform 0.3s ease;
-}
-// Efecto hover opcional
-.slide-wrapper:hover {
-  .text-overlay {
-    transform: translateY(-5px);
-    transition: transform 0.3s ease;
   }
 }

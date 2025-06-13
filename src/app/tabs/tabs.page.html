@@ -1,17 +1,20 @@
-<ion-tabs>
-  <ion-tab-bar slot="bottom" class="custom-tab-bar">
-    <ion-tab-button tab="home">
-      <ion-icon name="home-outline"></ion-icon>
-      <ion-label>Home</ion-label>
-    </ion-tab-button>
+<div class="tabs-container">
+  <div class="fab-button-container">
+    <ion-fab-button>
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </div>
+  <ion-tabs>
+    <ion-tab-bar slot="bottom" class="custom-tab-bar">
+      <ion-tab-button tab="home" href="/tabs/home">
+        <ion-icon aria-hidden="true" name="triangle"></ion-icon>
+        <ion-label>Inicio</ion-label>
+      </ion-tab-button>
 
-    <div class="middle-button-wrapper" (click)="createRepertory()">
-      <ion-icon name="add" class="middle-icon"></ion-icon>
-    </div>
-
-    <ion-tab-button tab="liturgy">
-      <ion-icon name="book-outline"></ion-icon>
-      <ion-label>Liturgy</ion-label>
-    </ion-tab-button>
-  </ion-tab-bar>
-</ion-tabs>
+      <ion-tab-button tab="liturgy" href="/tabs/liturgy">
+        <ion-icon aria-hidden="true" name="square"></ion-icon>
+        <ion-label>Liturgia</ion-label>
+      </ion-tab-button>
+    </ion-tab-bar>
+  </ion-tabs>
+</div>

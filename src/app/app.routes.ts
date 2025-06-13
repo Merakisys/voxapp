@@ -4,15 +4,16 @@ import { TabsPage } from './tabs/tabs.page';
 export const routes: Routes = [
   {
     path: '',
-    redirectTo: '/tabs/home',
+    redirectTo: 'splash/pantalla1',
     pathMatch: 'full',
   },
   {
     path: 'repertories2',
-    loadChildren: () =>
-      import('./pages/Repertories2/repertories.routes').then(
-        (m) => m.routes
-      ),
+    loadChildren: () => import('./pages/Repertories2/repertories.routes').then((m) => m.routes),
+  },
+  {
+    path: 'splash',
+    loadChildren: () => import('./splash/splash.routes').then((m) => m.default),
   },
   {
     path: 'tabs',
