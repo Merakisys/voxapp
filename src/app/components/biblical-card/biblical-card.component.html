@@ -1,0 +1,18 @@
+<ion-card class="bible-card" (click)="onCardClick()">
+  <div class="card-background" [style.background-image]="'url(' + backgroundImage + ')'">
+    <div class="overlay"></div>
+    
+    <ion-card-content class="card-content">
+      <div class="verse-container">
+        <p class="bible-reference">{{ bibleReference }}</p>
+      </div>
+      
+      <div class="date-container" *ngIf="showCurrentDate">
+        <ion-chip color="light" class="date-chip">
+          <ion-icon name="calendar-outline" slot="start"></ion-icon>
+          <ion-label>{{ getCurrentDate() }}</ion-label>
+        </ion-chip>
+      </div>
+    </ion-card-content>
+  </div>
+</ion-card>
