@@ -1,23 +1,35 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EnvironmentInjector, inject } from '@angular/core';
+import {
+  IonTabs,
+  IonTabBar,
+  IonTabButton,
+  IonIcon,
+  IonLabel,
+  IonFabButton,
+} from '@ionic/angular/standalone';
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
-import { Router } from '@angular/router';
-import { IonicModule } from '@ionic/angular';
+import { addIcons } from 'ionicons';
+import { triangle, ellipse, square, add } from 'ionicons/icons';
 
 @Component({
   selector: 'app-tabs',
   templateUrl: './tabs.page.html',
   styleUrls: ['./tabs.page.scss'],
   standalone: true,
-  imports: [CommonModule, FormsModule, IonicModule],
+  imports: [
+    CommonModule,
+    IonFabButton,
+    IonTabs,
+    IonTabBar,
+    IonTabButton,
+    IonIcon,
+    IonLabel,
+  ],
 })
-export class TabsPage implements OnInit {
-  constructor(private router: Router) {}
+export class TabsPage {
+  public environmentInjector = inject(EnvironmentInjector);
 
-  ngOnInit() {}
-
-  createRepertory() {
-    // Redirige a una página de creación
-    // this.router.navigate(['/create-repertory']);
+  constructor() {
+    addIcons({ triangle, ellipse, square, add });
   }
 }

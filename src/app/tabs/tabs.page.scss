@@ -1,28 +1,60 @@
-.custom-tab-bar {
+.tabs-container {
   position: relative;
-  --background: #f9f9f9;
-  --border: none;
-  height: 64px;
-  padding-bottom: env(safe-area-inset-bottom);
+  width: 100%;
+  height: 100%;
 }
 
-.middle-button-wrapper {
+.custom-tab-bar {
+  --background: #f2f2f2;
+  height: 60px;
+  padding: 0 10px;
+  border-radius: 20px 20px 0 0;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+ion-tab-button {
+  --color: #9e9e9e;
+  --color-selected: #000000;
+
+  &::before {
+    display: none;
+  }
+}
+
+.fab-button-space {
+  width: 20%;
+  visibility: hidden;
+}
+
+.fab-button-container {
   position: absolute;
-  top: -28px;
+  bottom: 30px; /* Position it at the bottom of the screen, above the tab bar */
   left: 50%;
   transform: translateX(-50%);
-  background-color: #1673d0;
-  border-radius: 50%;
-  width: 64px;
-  height: 64px;
+  z-index: 100; /* Ensure it's above everything */
   display: flex;
-  align-items: center;
   justify-content: center;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-  z-index: 100;
+  align-items: center;
 }
 
-.middle-icon {
-  color: #ffffff;
-  font-size: 32px;
+ion-fab-button {
+  --background: #8c8c9e;
+  --background-activated: #7a7a8c;
+  --background-hover: #7a7a8c;
+  --border-radius: 50%;
+  --box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+  height: 70px;
+  width: 70px;
+  margin: 0;
+  border: 4px solid white;
+  border-radius: 50%;
+  overflow: visible;
+
+  ion-icon {
+    font-size: 32px;
+    color: white;
+  }
 }
