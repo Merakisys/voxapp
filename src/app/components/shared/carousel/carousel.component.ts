@@ -1,33 +1,28 @@
 // src/app/components/shared/carousel/carousel.component.ts
-import { Component, Input, OnInit, OnDestroy } from '@angular/core';
+import { Component, Input, OnInit, OnDestroy, HostListener } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { IonButton, IonIcon } from '@ionic/angular/standalone';
-import { addIcons } from 'ionicons';
-import { chevronBackOutline, chevronForwardOutline } from 'ionicons/icons';
-import { CarouselItem } from '../../../models/carousel-item.interface';
+import { IonicModule } from '@ionic/angular';
 import { CardComponent } from '../card/card.component';
+import { CarouselItem } from '../../../models/carousel-item.interface';
 
 @Component({
   selector: 'app-carousel',
   templateUrl: './carousel.component.html',
   styleUrls: ['./carousel.component.scss'],
   standalone: true,
-  imports: [CommonModule, IonButton, IonIcon, CardComponent]
+  imports: [CommonModule, IonicModule, CardComponent]
 })
 export class CarouselComponent implements OnInit, OnDestroy {
   @Input() items: CarouselItem[] = [];
-  @Input() autoPlay: boolean = true;
-  @Input() autoPlayInterval: number = 4000;
+  @Input() autoPlay: boolean = false;
+  @Input() autoPlayInterval: number = 5000;
 
   currentIndex = 0;
-  private autoPlayTimer?: number;
-
-  constructor() {
-    addIcons({ chevronBackOutline, chevronForwardOutline });
-  }
+  private autoPlayTimer?: any;
+  private screenWidth = window.innerWidth;
 
   ngOnInit() {
-    if (this.autoPlay) {
+    if (this.autoPlay && this.items.length > 1) {
       this.startAutoPlay();
     }
   }
@@ -36,23 +31,47 @@ export class CarouselComponent implements OnInit, OnDestroy {
     this.stopAutoPlay();
   }
 
+  @HostListener('window:resize', ['$event'])
+  onResize(event: any) {
+    this.screenWidth = event.target.innerWidth;
+  }
+
+  getSlideWidth(): number {
+    // Ancho de cada slide basado en el tamaño de pantalla
+    if (this.screenWidth <= 480) {
+      return 200; // Móvil pequeño
+    } else if (this.screenWidth <= 768) {
+      return 220; // Tablet
+    } else {
+      return 280; // Desktop
+    }
+  }
+
   nextSlide() {
-    this.currentIndex = (this.currentIndex + 1) % this.items.length;
-    this.resetAutoPlay();
+    if (this.currentIndex < this.items.length - 1) {
+      this.currentIndex++;
+    } else {
+      this.currentIndex = 0;
+    }
+    this.restartAutoPlay();
   }
 
   prevSlide() {
-    this.currentIndex = this.currentIndex === 0 ? this.items.length - 1 : this.currentIndex - 1;
-    this.resetAutoPlay();
+    if (this.currentIndex > 0) {
+      this.currentIndex--;
+    } else {
+      this.currentIndex = this.items.length - 1;
+    }
+    this.restartAutoPlay();
   }
 
   goToSlide(index: number) {
     this.currentIndex = index;
-    this.resetAutoPlay();
+    this.restartAutoPlay();
   }
 
   private startAutoPlay() {
-    this.autoPlayTimer = window.setInterval(() => {
+    this.autoPlayTimer = setInterval(() => {
       this.nextSlide();
     }, this.autoPlayInterval);
   }
@@ -60,17 +79,14 @@ export class CarouselComponent implements OnInit, OnDestroy {
   private stopAutoPlay() {
     if (this.autoPlayTimer) {
       clearInterval(this.autoPlayTimer);
+      this.autoPlayTimer = undefined;
     }
   }
 
-  private resetAutoPlay() {
+  private restartAutoPlay() {
     if (this.autoPlay) {
       this.stopAutoPlay();
       this.startAutoPlay();
     }
-  }
-
-  getTransformStyle() {
-    return `translateX(-${this.currentIndex * 266}px)`;
   }
 }

@@ -1,42 +1,46 @@
 <!-- src/app/components/shared/carousel/carousel.component.html -->
 <div class="carousel-container">
   <!-- Botón anterior -->
-  <ion-button 
-    fill="clear" 
-    class="nav-button prev-button" 
-    (click)="prevSlide()"
-    *ngIf="items.length > 1">
-    <ion-icon name="chevron-back-outline"></ion-icon>
-  </ion-button>
+  @if (items.length > 1) {
+    <ion-button 
+      fill="clear" 
+      class="nav-button prev-button" 
+      (click)="prevSlide()">
+      <ion-icon name="chevron-back-outline"></ion-icon>
+    </ion-button>
+  }
 
   <!-- Contenedor del carrusel -->
   <div class="carousel-wrapper">
     <div 
       class="carousel-track" 
-      [style.transform]="'translateX(-' + (currentIndex * 266) + 'px)'">
-      <app-card 
-        *ngFor="let item of items" 
-        [item]="item">
-      </app-card>
+      [style.transform]="'translateX(-' + (currentIndex * getSlideWidth()) + 'px)'">
+      @for (item of items; track item.id) {
+        <app-card [item]="item"></app-card>
+      }
     </div>
   </div>
 
   <!-- Botón siguiente -->
-  <ion-button 
-    fill="clear" 
-    class="nav-button next-button" 
-    (click)="nextSlide()"
-    *ngIf="items.length > 1">
-    <ion-icon name="chevron-forward-outline"></ion-icon>
-  </ion-button>
+  @if (items.length > 1) {
+    <ion-button 
+      fill="clear" 
+      class="nav-button next-button" 
+      (click)="nextSlide()">
+      <ion-icon name="chevron-forward-outline"></ion-icon>
+    </ion-button>
+  }
 </div>
 
 <!-- Indicadores -->
-<div class="indicators" *ngIf="items.length > 1">
-  <button 
-    *ngFor="let item of items; let i = index" 
-    class="indicator" 
-    [class.active]="i === currentIndex"
-    (click)="goToSlide(i)">
-  </button>
-</div>
+@if (items.length > 1) {
+  <div class="indicators">
+    @for (item of items; track item.id; let i = $index) {
+      <button 
+        class="indicator" 
+        [class.active]="i === currentIndex"
+        (click)="goToSlide(i)">
+      </button>
+    }
+  </div>
+}

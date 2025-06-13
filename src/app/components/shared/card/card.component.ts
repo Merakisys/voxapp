@@ -1,6 +1,7 @@
 // src/app/components/shared/card/card.component.ts
-import { Component, Input } from '@angular/core';
-import { IonCard, IonCardContent, IonImg } from '@ionic/angular/standalone';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { IonicModule } from '@ionic/angular';
 import { CarouselItem } from '../../../models/carousel-item.interface';
 
 @Component({
@@ -8,8 +9,13 @@ import { CarouselItem } from '../../../models/carousel-item.interface';
   templateUrl: './card.component.html',
   styleUrls: ['./card.component.scss'],
   standalone: true,
-  imports: [IonCard, IonCardContent, IonImg]
+  imports: [CommonModule, IonicModule]
 })
 export class CardComponent {
   @Input() item!: CarouselItem;
+  @Output() cardClick = new EventEmitter<CarouselItem>();
+
+  onCardClick() {
+    this.cardClick.emit(this.item);
+  }
 }

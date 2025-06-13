@@ -1,8 +1,18 @@
 <!-- src/app/components/shared/card/card.component.html -->
-<ion-card class="card-item">
-  <ion-img [src]="item.image" [alt]="item.title"></ion-img>
-  <ion-card-content>
-    <h3>{{ item.title }}</h3>
-    <p *ngIf="item.subtitle">{{ item.subtitle }}</p>
-  </ion-card-content>
+<ion-card class="card-item" (click)="onCardClick()">
+  <!-- Imagen de fondo -->
+  <div class="card-background">
+    <ion-img [src]="item.image" [alt]="item.title"></ion-img>
+  </div>
+  
+  <!-- Overlay oscuro -->
+  <div class="card-overlay"></div>
+  
+  <!-- Contenido superpuesto -->
+  <div class="card-content-overlay">
+    <h3 class="card-title">{{ item.title }}</h3>
+    @if (item.subtitle) {
+      <p class="card-subtitle">{{ item.subtitle }}</p>
+    }
+  </div>
 </ion-card>
