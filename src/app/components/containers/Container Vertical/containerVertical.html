@@ -1,0 +1,15 @@
+<div class="horizontal-container">
+  <div class="title">{{ title }}</div>
+  <div class="content">
+    <div class="item" *ngFor="let item of items">
+      <div class="image-container">
+        <img [src]="item.imageUrl" [alt]="item.name" />
+        <img class="status-icon" 
+             [src]="item.isSelected ? 'https://c.animaapp.com/mbgnucpryW9snS/img/check-circle-outline.svg' : 'https://c.animaapp.com/mbgnucpryW9snS/img/0-percent.png'" 
+             [alt]="item.isSelected ? 'Marked' : 'Unmarked'" 
+             (click)="toggleSelection(item, $event)" />
+      </div>
+      <p>{{ item.name }}</p>
+    </div>
+  </div>
+</div>

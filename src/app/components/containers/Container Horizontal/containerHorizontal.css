@@ -1,0 +1,184 @@
+.vertical-container {
+  position: absolute;
+  width: 373px;
+  height: 215px;
+   max-height: 215px;
+   overflow-y: auto;  
+  background-color: #E8ECEF;
+  border-radius: 24px;
+  box-shadow: none; /* Quitamos el box-shadow */
+  z-index: 2000; /* Aumentamos el z-index para que esté por encima de todo */
+  padding: 15px;
+}
+
+.title {
+  font-family: "Poppins", Helvetica;
+  font-size: 20px;
+  color: #000000c9;
+  padding: 10px;
+  text-align: center;
+  margin-bottom: 10px;
+  font-weight: 500;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  max-height: 300px;
+  gap: 10px;
+  padding: 15px;
+  scrollbar-width: thin;
+  scrollbar-color: #4A90E2 #E8ECEF;
+  position: relative;
+  z-index: 2000; /* Aseguramos que el contenido también esté por encima */
+}
+
+.content::-webkit-scrollbar {
+  width: 8px;
+}
+
+.content::-webkit-scrollbar-track {
+  background: #E8ECEF;
+}
+
+.content::-webkit-scrollbar-thumb {
+  background-color: #4A90E2;
+  border-radius: 4px;
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-width: 100px;
+}
+
+.item img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+.item p {
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  color: #333;
+  margin: 0;
+  text-align: center;
+  flex-grow: 1;
+}
+
+.actions {
+  display: flex;
+  gap: 5px;
+}
+
+.action-icon {
+  width: 25px;
+  height: 25px;
+  object-fit: contain;
+  cursor: pointer;
+}
+
+.action-btn {
+  width: 30px;
+  height: 30px;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.delete-btn {
+  width: 32px;
+  height: 32px;
+  border: none;
+  background: #A94442;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  margin-left: auto;
+  padding: 6px;
+  box-shadow: 4px 4px 3px #00000040;
+}
+
+.delete-btn:hover {
+  background: #943e3c;
+}
+
+.delete-icon {
+  width: 13px;
+  height: 18px;
+  filter: brightness(0) invert(1); /* Hace el icono blanco */
+}
+
+.vertical-item {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05); /* Reducimos la sombra de los items */
+  margin-bottom: 12px;
+  padding: 12px;
+  display: flex;
+  align-items: center;
+  gap: 12px; /* Ajustamos el gap para mejor distribución del espacio */
+  position: relative;
+  transition: transform 0.2s;
+}
+
+.vertical-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.vertical-image {
+  width: 80px;
+  height: 80px;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+.vertical-details {
+  flex: 1;
+  min-width: 0;
+  padding-right: 10px; /* Agregamos padding para evitar que el texto toque el botón */
+  max-width: calc(100% - 130px); /* Ajustamos el ancho máximo considerando la imagen y el botón */
+}
+
+.item-title {
+  font-family: "Poppins", Helvetica;
+  font-weight: 600;
+  color: #1A3C5E;
+  font-size: 15px;
+  margin-bottom: 4px;
+  /* Eliminamos estas propiedades que truncaban el texto */
+  /* white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis; */
+  /* Agregamos estas propiedades para manejo de texto largo */
+  word-wrap: break-word;
+  word-break: break-word;
+  line-height: 1.2;
+}
+
+.item-subtitle {
+  font-family: "Poppins", Helvetica;
+  font-weight: 500;
+  color: #86939C;
+  font-size: 13px;
+  margin-bottom: 4px;
+}
+
+.item-text {
+  font-family: "Poppins", Helvetica;
+  font-weight: 400;
+  color: #1A3C5E;
+  font-size: 12px;
+  line-height: 1.4;
+}

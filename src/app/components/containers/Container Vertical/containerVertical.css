@@ -1,0 +1,87 @@
+.horizontal-container {
+  width: 380px;
+  background-color: #E8ECEF;
+  border: 1px solid #D3D8DC;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin: 10px 0;
+  display: flex;
+  flex-direction: column;
+  height: auto;
+  min-height: 100px;   
+  padding-bottom: 12px;
+  overflow-y: auto;   
+  overflow-x: hidden; 
+}
+
+
+.title {
+  font-family: "Poppins", Helvetica;
+  font-size: 20px;
+  color: #000000c9;
+  padding: 10px;
+  text-align: center;
+  border-bottom: 1px solid #D3D8DC;
+}
+
+.content {
+  display: flex;
+  flex-direction: row;
+  overflow-x: auto;
+  gap: 20px;
+  padding: 10px 20px 30px 20px; /* Añadimos padding inferior para los círculos */
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE/Edge */
+  margin-bottom: -8px; /* Espacio adicional al final */
+}
+
+.content::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
+}
+
+.item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px; /* Aumentamos el espacio para los círculos */
+  min-width: 133px;
+  padding: 0 5px;
+  margin-bottom: 25px; /* Añadimos margen inferior para dar espacio a los círculos */
+}
+
+.image-container {
+  
+  
+  position: relative;
+  width: 133px;
+  height: 133px;
+  z-index: 1;
+}
+
+.image-container img:not(.status-icon) {
+ 
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+ border-radius: 10px; /* Agregado para redondear las esquinas */
+}
+
+.status-icon {
+  position: absolute;
+  bottom: -75px; /* Bajamos más los círculos */
+  left: 50%;
+  transform: translateX(-50%);
+  width: 35px !important;
+  height: 35px !important;
+  cursor: pointer;
+  z-index: 2;
+}
+
+.item p {
+  font-family: "Poppins", Helvetica;
+  font-size: 12px;
+  color: #000000c4;
+  text-align: center;
+  margin-top: -10px;
+}

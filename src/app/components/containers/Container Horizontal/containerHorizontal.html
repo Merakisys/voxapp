@@ -1,0 +1,15 @@
+<div class="vertical-container" *ngIf="isVisible">
+  <div class="title">Canciones Agregadas</div>
+  <div class="content">
+    <div class="vertical-item" *ngFor="let item of items; let i = index">
+      <img [src]="item.imageUrl" [alt]="item.name" class="vertical-image">
+      <div class="vertical-details">
+        <div class="item-title">{{item.name}}</div>
+        <div class="item-subtitle">{{item.subtitle}}</div>
+      </div>
+      <button class="delete-btn" (click)="removeItem(i)">
+        <img src="https://c.animaapp.com/mbgnucpryW9snS/img/vector.svg" alt="Eliminar" class="delete-icon">
+      </button>
+    </div>
+  </div>
+</div>

@@ -8,6 +8,13 @@ export const routes: Routes = [
     pathMatch: 'full',
   },
   {
+    path: 'repertories2',
+    loadChildren: () =>
+      import('./pages/Repertories2/repertories.routes').then(
+        (m) => m.routes
+      ),
+  },
+  {
     path: 'tabs',
     component: TabsPage,
     children: [
@@ -28,6 +35,8 @@ export const routes: Routes = [
             (m) => m.RepertoriesPage
           ),
       },
+      
+      
       {
         path: '',
         redirectTo: '/tabs/home',

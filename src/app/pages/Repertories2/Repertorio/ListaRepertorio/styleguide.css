@@ -1,0 +1,5 @@
+:root {
+  --secondary: rgba(238, 241, 244, 1);
+  --shadow-3: 0px 4px 12px 0px rgba(13, 10, 44, 0.06);
+  --img-draopshadow: 0px 20px 35px 0px rgba(0, 0, 0, 0.05);
+}
