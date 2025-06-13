@@ -1,7 +1,7 @@
 // src/app/components/feature/welcome-section/welcome-section.component.scss
 .welcome-section {
   padding: 20px 16px;
-  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  background: white; // Fondo blanco simple sin gradiente
   min-height: 400px;
 }
 
@@ -13,12 +13,16 @@
 .welcome-title {
   font-size: 2rem;
   font-weight: 700;
-  color: var(--ion-color-dark);
+  color: #000000; // Color negro sólido
   margin: 0;
-  background: linear-gradient(45deg, #667eea 0%, #764ba2 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  display: flex;
+  align-items: center;
+  gap: 8px; // Espacio entre el texto y el emoji
+}
+
+.welcome-emoji {
+  font-size: 2rem;
+  color: #FFD700; // Color dorado para el emoji para que destaque
 }
 
 .carousel-container {
@@ -32,6 +36,10 @@
   }
   
   .welcome-title {
+    font-size: 1.6rem;
+  }
+  
+  .welcome-emoji {
     font-size: 1.6rem;
   }
 }
