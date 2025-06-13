@@ -1,0 +1,28 @@
+.custom-tab-bar {
+  position: relative;
+  --background: #f9f9f9;
+  --border: none;
+  height: 64px;
+  padding-bottom: env(safe-area-inset-bottom);
+}
+
+.middle-button-wrapper {
+  position: absolute;
+  top: -28px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #1673d0;
+  border-radius: 50%;
+  width: 64px;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  z-index: 100;
+}
+
+.middle-icon {
+  color: #ffffff;
+  font-size: 32px;
+}

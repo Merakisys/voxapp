@@ -1,21 +1,38 @@
 import { Routes } from '@angular/router';
+import { TabsPage } from './tabs/tabs.page';
 
 export const routes: Routes = [
   {
-    path: 'home',
-    loadComponent: () => import('./home/home.page').then((m) => m.HomePage),
-  },
-  {
     path: '',
-    redirectTo: 'home',
+    redirectTo: '/tabs/home',
     pathMatch: 'full',
-  },  {
-    path: 'liturgy',
-    loadComponent: () => import('./liturgy/liturgy.page').then( m => m.LiturgyPage)
   },
   {
-    path: 'repertoire',
-    loadComponent: () => import('./repertoire/repertoire.page').then( m => m.RepertoirePage)
+    path: 'tabs',
+    component: TabsPage,
+    children: [
+      {
+        path: 'home',
+        loadComponent: () =>
+          import('./pages/home/home.page').then((m) => m.HomePage),
+      },
+      {
+        path: 'liturgy',
+        loadComponent: () =>
+          import('./pages/liturgy/liturgy.page').then((m) => m.LiturgyPage),
+      },
+      {
+        path: 'repertories',
+        loadComponent: () =>
+          import('./pages/repertories/repertories.page').then(
+            (m) => m.RepertoriesPage
+          ),
+      },
+      {
+        path: '',
+        redirectTo: '/tabs/home',
+        pathMatch: 'full',
+      },
+    ],
   },
-
 ];

@@ -1,0 +1,117 @@
+<ion-content [fullscreen]="true">
+  <div class="carousel-container">
+
+    <!-- Título 1: Lecturas del Día -->
+    <div class="carousel-section">
+      <h3 class="carousel-title">Lecturas del Día</h3>
+      <swiper-container
+        pagination="true"
+        pagination-clickable="true"
+        navigation="false"
+        space-between="15"
+        slides-per-view="2"
+        autoplay="true"
+        loop="true"
+        class="overlay-swiper first-carousel">
+
+        <swiper-slide *ngFor="let slide of slidesLecturas">
+          <div class="slide-wrapper">
+            <div class="image-container">
+              <img [src]="slide.image" [alt]="slide.title" />
+              <div class="overlay-gradient"></div>
+              <div class="text-overlay">
+                <h1 class="main-title">{{ slide.title }}</h1>
+                <p class="subtitle">{{ slide.subtitle }}</p>
+              </div>
+            </div>
+          </div>
+        </swiper-slide>
+      </swiper-container>
+    </div>
+
+    <!-- Título 2: Liturgia Musical -->
+    <div class="carousel-section">
+      <h3 class="carousel-title">Liturgia Musical</h3>
+      <swiper-container
+        pagination="true"
+        pagination-clickable="true"
+        navigation="false"
+        space-between="15"
+        slides-per-view="2"
+        autoplay="true"
+        loop="true"
+        class="overlay-swiper second-carousel">
+
+        <swiper-slide *ngFor="let slide of slidesEventos">
+          <div class="slide-wrapper">
+            <div class="image-container">
+              <img [src]="slide.image" [alt]="slide.title" />
+              <div class="overlay-gradient"></div>
+              <div class="text-overlay">
+                <h1 class="main-title">{{ slide.title }}</h1>
+                <p class="subtitle">{{ slide.subtitle }}</p>
+              </div>
+            </div>
+          </div>
+        </swiper-slide>
+      </swiper-container>
+    </div>
+
+    <!-- Título 3: Actividades Eclesiales -->
+    <div class="carousel-section">
+      <h3 class="carousel-title">Actividades Eclesiales</h3>
+      <swiper-container
+        pagination="true"
+        pagination-clickable="true"
+        navigation="false"
+        space-between="15"
+        slides-per-view="2"
+        autoplay="true"
+        loop="true"
+        class="overlay-swiper third-carousel">
+
+        <swiper-slide *ngFor="let slide of slidesActividades">
+          <div class="slide-wrapper">
+            <div class="image-container">
+              <img [src]="slide.image" [alt]="slide.title" />
+              <div class="overlay-gradient"></div>
+              <div class="text-overlay">
+                <h1 class="main-title">{{ slide.title }}</h1>
+                <p class="subtitle">{{ slide.subtitle }}</p>
+              </div>
+            </div>
+          </div>
+        </swiper-slide>
+      </swiper-container>
+    </div>
+
+    <!-- Título 4: Cantos -->
+    <div class="carousel-section">
+      <h3 class="carousel-title">Cantos</h3>
+      <swiper-container
+        pagination="true"
+        pagination-clickable="true"
+        navigation="false"
+        space-between="15"
+        slides-per-view="2"
+        autoplay="true"
+        loop="true"
+        class="overlay-swiper fourth-carousel">
+
+        <swiper-slide *ngFor="let slide of slidesCantos">
+          <div class="slide-wrapper">
+            <div class="image-container">
+              <img [src]="slide.image" [alt]="slide.title" />
+              <div class="overlay-gradient"></div>
+              <div class="text-overlay">
+                <h1 class="main-title">{{ slide.title }}</h1>
+                <p class="subtitle">{{ slide.subtitle }}</p>
+              </div>
+            </div>
+          </div>
+        </swiper-slide>
+      </swiper-container>
+    </div>
+
+  </div>
+</ion-content>
