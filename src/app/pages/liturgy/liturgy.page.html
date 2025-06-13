@@ -1,6 +1,11 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title class="titulo">Liturgia</ion-title>
+  </ion-toolbar>
+</ion-header>
+
 <ion-content [fullscreen]="true">
   <div class="carousel-container">
-
     <!-- Título 1: Lecturas del Día -->
     <div class="carousel-section">
       <h3 class="carousel-title">Lecturas del Día</h3>
@@ -12,8 +17,8 @@
         slides-per-view="2"
         autoplay="true"
         loop="true"
-        class="overlay-swiper first-carousel">
-
+        class="overlay-swiper first-carousel"
+      >
         <swiper-slide *ngFor="let slide of slidesLecturas">
           <div class="slide-wrapper">
             <div class="image-container">
@@ -40,8 +45,8 @@
         slides-per-view="2"
         autoplay="true"
         loop="true"
-        class="overlay-swiper second-carousel">
-
+        class="overlay-swiper second-carousel"
+      >
         <swiper-slide *ngFor="let slide of slidesEventos">
           <div class="slide-wrapper">
             <div class="image-container">
@@ -68,8 +73,8 @@
         slides-per-view="2"
         autoplay="true"
         loop="true"
-        class="overlay-swiper third-carousel">
-
+        class="overlay-swiper third-carousel"
+      >
         <swiper-slide *ngFor="let slide of slidesActividades">
           <div class="slide-wrapper">
             <div class="image-container">
@@ -96,8 +101,8 @@
         slides-per-view="2"
         autoplay="true"
         loop="true"
-        class="overlay-swiper fourth-carousel">
-
+        class="overlay-swiper fourth-carousel"
+      >
         <swiper-slide *ngFor="let slide of slidesCantos">
           <div class="slide-wrapper">
             <div class="image-container">
@@ -112,6 +117,5 @@
         </swiper-slide>
       </swiper-container>
     </div>
-
   </div>
 </ion-content>
