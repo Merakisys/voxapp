@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="globals.css" />
+    <link rel="stylesheet" href="styleguide.css" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="lista-repertorio-m">
+      <div class="scroll-wrapper">
+        <div class="div">
+          <div class="group">
+            <div class="repertorio" style="color: #1a3c5e; font-family: 'Poppins', sans-serif; font-size: 18px; font-weight: 600;">
+              {{ repertorio?.nombre }}
+            </div>
+            <svg class="ic-baseline-less" (click)="volverARepertorio()" xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24">
+              <path fill="#3D6FA2" d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z" />
+            </svg>
+          </div>
+
+          <div class="canciones-container">
+            <div *ngFor="let cancion of repertorio?.canciones" class="cart-card">
+              <div class="overlap-2">
+                <div class="cart">
+                  <div class="cart-layout">
+                    <img [src]="cancion.imageUrl" [alt]="cancion.nombre" class="image-placeholder">
+                    <div class="cart-text">
+                      <div class="text-wrapper">{{ cancion.tipo }}</div>
+                      <div class="text-wrapper-2">{{ cancion.nombre }}</div>
+                      <p class="descripcion">{{ cancion.descripcion }}</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

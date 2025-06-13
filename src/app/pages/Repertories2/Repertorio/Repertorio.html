@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="utf-8" />
+  <link rel="stylesheet" href="globals.css" />
+  <link rel="stylesheet" href="styleguide.css" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="repertorio-m">
+    <div class="scroll-wrapper">
+      <div class="div">
+        <div class="group">
+          <div class="div-wrapper" (click)="toggleTiempos()">
+            <div class="text-wrapper">{{ tiempoSeleccionado }}</div>
+          </div>
+          <!-- Menú desplegable de tiempos litúrgicos -->
+          <div class="tiempo-menu" *ngIf="mostrarTiempos">
+            <div class="tiempo-item" *ngFor="let tiempo of tiemposLiturgicos" 
+                 (click)="seleccionarTiempo(tiempo)">
+              {{ tiempo }}
+            </div>
+          </div>
+        </div>
+        <div class="frame">
+          <div class="group-2">
+            <div class="text-wrapper-2">Lista de Repertorios</div>
+            <div class="scroll-container">
+              <div class="repertorios-wrapper">
+                <div *ngFor="let repertorio of repertoriosFiltrados" 
+                     class="repertorio-item" 
+                     (click)="verRepertorio(repertorio)">
+                  <div class="overlap-group">
+                    <div class="text-wrapper-4">{{ repertorio.nombre }}</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="group-8">
+          <app-busqueda (searchChange)="onSearchChange($event)"></app-busqueda>
+        </div>
+        <div class="group-9">
+          <img class="repertorio" src="https://c.animaapp.com/mbgnx6p0tp1yZg/img/repertorio.png" />
+          <svg class="ic-baseline-less" (click)="irAHome()" xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" style="cursor: pointer;">
+            <path fill="#3D6FA2" d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z" />
+          </svg>
+        </div>
+        <!-- Botón crear -->
+        <button class="overlap-3" (click)="crearRepertorio()">
+          <div class="rectangle-3"></div>
+          <img class="aadir-repertorio" src="https://c.animaapp.com/mbgnucpryW9snS/img/a-adir-repertorio.png" />
+        </button>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
